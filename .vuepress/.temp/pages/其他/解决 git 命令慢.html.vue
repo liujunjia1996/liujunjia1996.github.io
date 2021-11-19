@@ -1,9 +1,0 @@
-<template><p>最近，我饱受家里电脑 git 命令执行慢的困扰，只要是和远程仓库有交互的都非常的慢，一度 push 代码要十几次才能成功一次。</p>
-<p>遇到问题当然要想办法解决了，恰好我也有自己的梯子，想着走代理应该就没问题了吧。</p>
-<p>可是我把梯子设置成全局模式，却感觉完全也没走上代理。。。 后来有几次着急了，都是手机开热点才让代码提上去的。</p>
-<p>今天这个问题终于解决了，哈哈，原来是要配置一下 git，在命令行上设置代理。</p>
-<p>我家里电脑用的翻墙软件是 v2rayN ，它本地监听的端口是 10808，协议是 socks，所以，执行命令如下：</p>
-<div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>git config --global http.proxy socks://127.0.0.1:10808
-git config --global https.proxy socks://127.0.0.1:10808
-</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>不出意外的话，这篇小文章就是走代理 push 上去的了。</p>
-</template>
