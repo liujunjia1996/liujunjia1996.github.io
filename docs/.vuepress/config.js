@@ -3,8 +3,8 @@ module.exports = {
     title: "liujunjia's blog",
     themeConfig: {
         sidebar: [ {
-                            text: '#21 年书单',
-                            link: '/#21 年书单.md',
+                            text: '21 年书单',
+                            link: '/21 年书单.md',
                           }, {
                     text: 'JDK',
                     children: [ {

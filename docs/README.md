@@ -5,7 +5,7 @@ heroText: 小飞机
 tagline: 起飞
 actions:
   - text: Get In
-    link: /#21 年书单.html
+    link: /21 年书单.html
     type: primary
 footer: liujunjia1996 / xi'an
 
