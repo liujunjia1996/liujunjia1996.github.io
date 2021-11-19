@@ -59,5 +59,4 @@ redolog 重做日志，宕机或断电重启时使用，保证事务 acid 中的
 undolog 回滚日志，事务回滚和 mvcc 中使用，保证事务 acid 中的 a 和 i   
 binlog 同步日志，用来主从同步，可以通过订阅 binlog 实现一些特定功能   
 ## mvcc
-
 ## mysql 中的锁
