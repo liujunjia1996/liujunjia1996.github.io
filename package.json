@@ -15,6 +15,7 @@
   "devDependencies": {
     "vuepress": "^2.0.0-beta.27",
     "@vuepress/shared-utils": "^1.8.2",
+    "@vue/component-compiler-utils": "^3.3.0",
     "@vuepress/plugin-search": "^1.8.2"
   }
 }
