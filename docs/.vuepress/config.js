@@ -3,6 +3,9 @@ module.exports = {
     title: "liujunjia's blog",
     themeConfig: {
         sidebar: [ {
+                            text: '#21 年书单',
+                            link: '/#21 年书单.md',
+                          }, {
                     text: 'JDK',
                     children: [ {
                             text: 'Array.asList 和 List.of 的区别',
@@ -56,9 +59,6 @@ module.exports = {
                   } , {
                     text: '其他',
                     children: [ {
-                            text: '21 年书单',
-                            link: '/其他/21 年书单.md',
-                          }, {
                             text: 'display visibility opacity',
                             link: '/其他/display visibility opacity.md',
                           }, {
