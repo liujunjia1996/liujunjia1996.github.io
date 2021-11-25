@@ -6,11 +6,6 @@ const getTemplate = (routesConfig) => {
 module.exports = {
     lang: 'zh-CN',
     title: "liujunjia's blog",
-    head: [
-      [
-        'link',{rel:'stylesheet',href: '/css/index.css'}
-      ]
-    ],
     themeConfig: {
         sidebar: ${routesConfig},
     },
