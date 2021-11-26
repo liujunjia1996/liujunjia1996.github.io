@@ -1,7 +1,7 @@
 const getMap = () => {
 
     return {
-        "JDK":"JDK",
+        "jdk":"JDK",
         "db":"数据库",
         "middleware":"中间件",
         "other":"其他",
