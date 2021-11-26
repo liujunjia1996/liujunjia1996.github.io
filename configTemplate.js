@@ -1,13 +1,14 @@
 
   
-const getTemplate = (routesConfig) => {
+const getTemplate = (navbar,sidebar) => {
     const baseContent =
 `const { path } = require('@vuepress/utils')
 module.exports = {
     lang: 'zh-CN',
     title: "liujunjia's blog",
     themeConfig: {
-        sidebar: ${routesConfig},
+        navbar: ${navbar},
+        sidebar: ${sidebar},
     },
     theme: path.resolve(__dirname, './theme'),
     plugins: [

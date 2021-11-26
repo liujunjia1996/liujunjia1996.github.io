@@ -42,7 +42,6 @@ export default {
     },
     handleScroll() {
       this.domHeadArray.some((v, i) => {
-        console.log(i);
         if (this.checkInScreen(v)) {
           this.currentIndex = i;
           return true;
