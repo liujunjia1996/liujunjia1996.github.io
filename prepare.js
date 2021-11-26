@@ -44,7 +44,7 @@ const run = () => {
                             children.push(
                                 ` {
                                     text: '${simpleName}',
-                                    link: '${subFilePath.split('docs')[1]}',
+                                    link: '${subFilePath.split('docs')[1].replace(" ",'')}',
                                   }`
                             )
                         }
@@ -63,7 +63,7 @@ const run = () => {
                     sidebar.push(
                         `'/${simpleName}': {
                             text: '${simpleName}',
-                            link: '${filePath.split('docs')[1]}',
+                            link: '${filePath.split('docs')[1]}.replace(" ",'')',
                           }`
                     )
                 }
