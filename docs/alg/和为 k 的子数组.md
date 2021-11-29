@@ -20,10 +20,10 @@
 public class Solution {
     public int subarraySum(int[] nums, int k) {
         int count = 0;
-        for (int start = 0; start < nums.length; ++start) {
+        for (int right = 0; right < nums.length; ++right) {
             int sum = 0;
-            for (int end = start; end >= 0; --end) {
-                sum += nums[end];
+            for (int left = right; left >= 0; --left) {
+                sum += nums[left];
                 if (sum == k) {
                     count++;
                 }
