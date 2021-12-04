@@ -131,4 +131,10 @@ Kafka 客户端一共有两个线程，主线程和 sender 线程，这两个线
 #### 消费者和分区的关系
 
 1. 消费者组之间互不影响，如果同时订阅了某个 topic 则每个消费者组都会收到消息
+
+![image](https://user-images.githubusercontent.com/43411944/144708429-1c5155f9-f544-44bb-86a2-448adb182fa2.png)
+
 2. 同一个消费者组内，每个消费者消费的分区数为`总分数/消费者个数`，如果不能整除就会出现负载不均衡的问题，甚至如果消费者个数大于分区数会出现某些消费者空闲的问题
+
+![image](https://user-images.githubusercontent.com/43411944/144708424-98901b0f-dd2e-44ab-946d-36f7aa21592c.png)
+
