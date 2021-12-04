@@ -1,3 +1,5 @@
+## 描述
+
 **https://leetcode-cn.com/problems/subarray-sum-equals-k/**
 
 给你一个整数数组 nums 和一个整数 k ，请你统计并返回该数组中和为 k 的连续子数组的个数。  
@@ -13,9 +15,8 @@
 输入：nums = [1,2,3], k = 3
 输出：2
 ```
-
-------------
-## 暴力解
+## 实现
+### 暴力解
 ```java
 public class Solution {
     public int subarraySum(int[] nums, int k) {
@@ -33,7 +34,7 @@ public class Solution {
     }
 }
 ```
-## 前缀和
+### 前缀和
 ```java
 public class Solution {
     public int subarraySum(int[] nums, int k) {
