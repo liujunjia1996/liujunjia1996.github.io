@@ -1,5 +1,8 @@
 <template>
   <Layout>
+    <template #navbar-before>
+      <EditThisPage/>
+    </template>
     <template #page-bottom>
       <NavTree id="navTree" />
     </template>
@@ -9,11 +12,13 @@
 <script>
 import Layout from "@vuepress/theme-default/lib/client/layouts/Layout.vue";
 import NavTree from "./NavTree.vue";
+import EditThisPage from "./EditThisPage.vue";
 
 export default {
   components: {
     Layout,
     NavTree,
+    EditThisPage
   },
 };
 </script>

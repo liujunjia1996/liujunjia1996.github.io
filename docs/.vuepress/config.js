@@ -37,8 +37,17 @@ module.exports = {
                             link: '/21 年书单.md',
                           },'/alg':[{
                         children: [ {
+                                    text: '和为 k 的子数组',
+                                    link: '/alg/和为 k 的子数组.md',
+                                  }, {
+                                    text: '回文字符串、回文链表',
+                                    link: '/alg/回文字符串、回文链表.md',
+                                  }, {
                                     text: '排序算法',
                                     link: '/alg/排序算法.md',
+                                  }, {
+                                    text: '整数拆分',
+                                    link: '/alg/整数拆分.md',
                                   }, {
                                     text: '最长回文子串、子序列',
                                     link: '/alg/最长回文子串、子序列.md',
@@ -144,6 +153,8 @@ module.exports = {
                                   }],
                    }] },
     },
+    head: [['link', { rel: 'icon', href: '/images/logo.png' }]],
+    bundler: '@vuepress/bundler-vite',
     theme: path.resolve(__dirname, './theme'),
     plugins: [
       [

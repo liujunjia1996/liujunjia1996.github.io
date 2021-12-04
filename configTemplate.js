@@ -10,6 +10,8 @@ module.exports = {
         navbar: ${navbar},
         sidebar: ${sidebar},
     },
+    head: [['link', { rel: 'icon', href: '/images/logo.png' }]],
+    bundler: '@vuepress/bundler-vite',
     theme: path.resolve(__dirname, './theme'),
     plugins: [
       [

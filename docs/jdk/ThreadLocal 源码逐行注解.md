@@ -1,8 +1,3 @@
----
-lang: zh-CN
-title: 页面的标题2
-description: 页面的描述
----
 ## 写在前面
 最近在读 ThreadLocal 的源码，感觉 ThreadLocal 设计的还是很巧妙的，首先它利用了魔数，尽量避免 hash 冲突，其次它解决 hash 冲突的方式也不是 hashmap 的那种拉链法，而是使用了开放地址法，还有，它的 set/get 甚至 remove 方法都包含了清理 stale entry 的逻辑，设计者真是为了内存泄漏操碎了心啊。 
 
