@@ -212,7 +212,7 @@ export default {
   }
 }
 
-@media screen and (max-width: 1420px) {
+@media screen and (max-width: 1700px) {
   .navTree {
     display: none;
   }

@@ -1,5 +1,6 @@
 <template>
   <a class="navbar-edit" title="only for myself" @click="handleClick">edit this page</a>
+  
 </template>
 
 <script>

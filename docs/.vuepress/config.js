@@ -37,6 +37,9 @@ module.exports = {
                             link: '/21 年书单.md',
                           },'/alg':[{
                         children: [ {
+                                    text: 'LRU',
+                                    link: '/alg/LRU.md',
+                                  }, {
                                     text: '和为 k 的子数组',
                                     link: '/alg/和为 k 的子数组.md',
                                   }, {

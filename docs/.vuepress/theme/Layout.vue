@@ -1,8 +1,6 @@
 <template>
   <Layout>
-    <template #navbar-before>
-      <EditThisPage/>
-    </template>
+    <template #navbar-before> </template>
     <template #page-bottom>
       <NavTree id="navTree" />
     </template>
@@ -12,13 +10,20 @@
 <script>
 import Layout from "@vuepress/theme-default/lib/client/layouts/Layout.vue";
 import NavTree from "./NavTree.vue";
-import EditThisPage from "./EditThisPage.vue";
 
 export default {
   components: {
     Layout,
     NavTree,
-    EditThisPage
+  },
+  mounted() {
+    document.onkeydown = function (e) {
+      if (e.key === ".") {
+        const repLink =
+          "https://github.dev/liujunjia1996/liujunjia1996.github.io/blob/main/docs";
+        window.open(repLink + window.location.pathname.replace(".html", ".md"));
+      }
+    };
   },
 };
 </script>
@@ -29,10 +34,5 @@ export default {
   z-index: 9999;
   right: 10px;
   top: 100px;
-}
-@media screen and (max-width: 1700px) {
-  #navTree {
-    display: none;
-  }
 }
 </style>
