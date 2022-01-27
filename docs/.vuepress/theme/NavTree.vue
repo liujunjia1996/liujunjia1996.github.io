@@ -37,7 +37,8 @@ export default {
   },
   methods: {
     initScroll() {
-      this.realScroll = this.debouceAndThrotte(this.handleScroll);
+      // this.realScroll = this.debouceAndThrotte(this.handleScroll);
+      this.realScroll = this.handleScroll // 先改回这个来
       window.addEventListener("scroll", this.realScroll);
     },
     handleScroll() {
