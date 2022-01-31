@@ -1,1 +1,0 @@
-import{o as e,c as r}from"./app.14477210.js";import{_}from"./plugin-vue_export-helper.21dcd24c.js";const o={};function c(t,n){return e(),r("p",null,"todo")}var s=_(o,[["render",c]]);export{s as default};
