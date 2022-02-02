@@ -41,36 +41,50 @@ public class KMP {
 ---
 前缀表版本
 ```java
-class Solution {
-    //前缀表（不减一）Java实现
-    public int strStr(String haystack, String needle) {
-        if (needle.length() == 0) return 0;
-        int[] next = new int[needle.length()];
-        getNext(next, needle);
+public class KMP {
+    int[] next;
+    String pat;
 
-        int j = 0;
-        for (int i = 0; i < haystack.length(); i++) {
-            while (j > 0 && needle.charAt(j) != haystack.charAt(i)) 
+    KMP(String pat) {
+        this.pat = pat;
+        // 构建 next 数组
+        var l = pat.length();
+        next = new int[l];
+        next[0] = 0;
+        // 最长相同前后缀的前缀指针
+        var i = 0;
+        for (int j = 1; j < l; j++) {
+            var char_ = pat.charAt(j);
+            while (i > 0 && char_ != pat.charAt(i)) {
+                // 这里为什么是 i = next[i - 1]; 而不是 i-- ？
+                // eg aabaaf
+                // 有一种对称的感觉，后半部分其实是比较过的了，
+                // 所以直接通过 next[i - 1] 再找公共前后缀比一下末尾就行
+                i = next[i - 1];
+            }
+            if (char_ == pat.charAt(i)) {
+                i++;
+            }
+            next[j] = i;
+        }
+    }
+
+    int search(String txt) {
+        var l = txt.length();
+        var j = 0;
+        for (int i = 0; i < l; i++) {
+            while (j > 0 && txt.charAt(i) != pat.charAt(j)) {
                 j = next[j - 1];
-            if (needle.charAt(j) == haystack.charAt(i)) 
+            }
+            if (txt.charAt(i) == pat.charAt(j)) {
                 j++;
-            if (j == needle.length()) 
-                return i - needle.length() + 1;
+            }
+            if (j == pat.length()) {
+                return i - j + 1;
+            }
         }
         return -1;
+    }
 
-    }
-    
-    private void getNext(int[] next, String s) {
-        int j = 0;
-        next[0] = 0;
-        for (int i = 1; i < s.length(); i++) {
-            while (j > 0 && s.charAt(j) != s.charAt(i)) 
-                j = next[j - 1];
-            if (s.charAt(j) == s.charAt(i)) 
-                j++;
-            next[i] = j; 
-        }
-    }
 }
 ```
