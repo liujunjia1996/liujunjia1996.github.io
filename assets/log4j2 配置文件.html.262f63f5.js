@@ -1,0 +1,1 @@
+const t={key:"v-8ec05614",path:"/spring/log4j2%20%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6.html",title:"",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1644840487e3,contributors:[{name:"liujunjia",email:"43411944+liujunjia1996@users.noreply.github.com",commits:1}]},filePathRelative:"spring/log4j2 \u914D\u7F6E\u6587\u4EF6.md"};export{t as data};
