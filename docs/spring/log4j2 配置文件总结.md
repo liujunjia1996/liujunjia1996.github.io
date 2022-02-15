@@ -17,24 +17,27 @@
     <!--monitorInterval 自动更新配置文件的周期-->
     <properties>
         <property name="logPath">/logs</property>
-        <property name="every_file_size">50M</property><!-- 日志切割的最小单位 -->
-        <property name="output_log_level">info</property><!-- 日志输出级别 -->
+        <property name="every_file_size">50M</property><!-- 日志切割单位 -->
     </properties>
     <!--输出介质-->
     <Appenders>
-        <Console name="Console" target="SYSTEM_OUT">
+        <!--控制台-->
+        <Console name="console" target="SYSTEM_OUT">
             <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} [%t] %-5p %c{2}:%L - %msg%n"/>
             <!-- <PatternLayout pattern="%d{HH:mm:ss} [%t] %-5level %logger{36} - %msg%n" /> -->
             <!-- <PatternLayout pattern="%-d [%t] %-5p %c{1}:%L - %m%n" /> -->
         </Console>
+        <!--文件-->
         <RollingFile name="root" filename="${logPath}/root.log"
                      filepattern="${logPath}/%d{yyyyMMdd}-%i-root.log">
             <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss,SSS} [%t] %-5p %c{1}:%L - %msg%n"/>
             <Policies>
+                <!--单文件的最大 size-->
                 <SizeBasedTriggeringPolicy size="${every_file_size}"/>
                 <!--  ${sys:every_file_size} == System.getProperty("every_file_size")-->
                 <!--  <SizeBasedTriggeringPolicy size="${sys:every_file_size}"/>-->
             </Policies>
+            <!--最多保留 100 个文件-->
             <DefaultRolloverStrategy max="100"/>
         </RollingFile>
         <RollingFile name="root-error" filename="${logPath}/root-error.log"
@@ -51,10 +54,12 @@
     <!--输入管理-->
     <Loggers>
         <!--必须有这个才能让 mybatis 打印出 sql 语句-->
+        <!-- additivity 默认是 true-->
         <logger name="com.example.mybatis.mapper" level="debug"/>
         <Root level="info">
             <AppenderRef ref="Console"/>
             <AppenderRef ref="root"/>
+            <AppenderRef ref="root-error"/>
         </Root>
     </Loggers>
 </Configuration>
