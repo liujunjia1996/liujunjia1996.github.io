@@ -23,7 +23,7 @@
 			}
     </script>
     <link rel="icon" href="/images/logo.png"><title>liujunjia's blog</title><meta name="description" content="">
-    <link rel="modulepreload" href="/assets/app.3e7b7d05.js"><link rel="modulepreload" href="/assets/Array.asList 和 List.of 的区别.html.b0dbf9c5.js"><link rel="modulepreload" href="/assets/Array.asList 和 List.of 的区别.html.cd52dc83.js"><link rel="modulepreload" href="/assets/plugin-vue_export-helper.21dcd24c.js">
+    <link rel="modulepreload" href="/assets/app.f137fb32.js"><link rel="modulepreload" href="/assets/Array.asList 和 List.of 的区别.html.754a1806.js"><link rel="modulepreload" href="/assets/Array.asList 和 List.of 的区别.html.daf53e6b.js"><link rel="modulepreload" href="/assets/plugin-vue_export-helper.21dcd24c.js">
     <link rel="stylesheet" href="/assets/style.8a91f6b7.css">
   </head>
   <body>
@@ -44,6 +44,6 @@ array<span class="token punctuation">[</span><span class="token number">1</span>
 array<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
 <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>list2<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 输出 [1, 2, 3]</span>
 </code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h2 id="总结" tabindex="-1"><a class="header-anchor" href="#总结" aria-hidden="true">#</a> 总结</h2><p>这三个最应该警惕的是第三点，因为第三点在 idea 上没有任何的警告</p><p>至于使用上，个人比较喜欢 List.of ，因为 Arrays.asList 返回的 List 是它自己的内部类，虽然可以修改，但是功能不完全（比如不能 add），不纯粹，对于要得到可修改的 List 的需求，我会选择 <code>new ArrayList&lt;&gt;(List.of(1, 2, 3))</code>手动创建一个正常的 ArrayList</p><p>但是，List.of 属于 jdk11，jdk11 在团队内部是没有问题的，但是当我提供 sdk 给别的团队用时，尽量就不要用 List.of 了，因为有的团队还在跑 jdk8 （题外话，虽然本地的 jdk 是 11 的，但是可以在 idea 上为某个项目设置语法级别，这样就可以用 jdk11 开发出 jdk8 可用的 sdk 了）</p><!--]--></div><footer class="page-meta"><!----><div class="meta-item last-updated"><span class="meta-item-label">Last Updated: </span><!----></div><div class="meta-item contributors"><span class="meta-item-label">Contributors: </span><span class="meta-item-info"><!--[--><!--[--><span class="contributor" title="email: 43411944+liujunjia1996@users.noreply.github.com">liujunjia</span><!----><!--]--><!--]--></span></div></footer><!----><!--[--><!--[--><!----><!--]--><!--]--></main><!--]--></div><!----><!--]--></div>
-    <script type="module" src="/assets/app.3e7b7d05.js" defer></script>
+    <script type="module" src="/assets/app.f137fb32.js" defer></script>
   </body>
 </html>
