@@ -29,3 +29,5 @@ footer: liujunjia1996 / xi'an
 十二月：
 
 剑指 offer ，有电子书，21 年新出版的
+
+2022啥都没看
