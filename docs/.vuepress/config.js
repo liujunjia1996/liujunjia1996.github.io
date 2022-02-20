@@ -58,6 +58,9 @@ module.exports = {
                                 text: '排序算法',
                                 link: '/alg/排序算法.md',
                               }, {
+                                text: '摩尔投票',
+                                link: '/alg/摩尔投票.md',
+                              }, {
                                 text: '整数拆分',
                                 link: '/alg/整数拆分.md',
                               }, {
