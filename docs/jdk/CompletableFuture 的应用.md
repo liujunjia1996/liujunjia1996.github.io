@@ -20,7 +20,7 @@ import java.util.function.Supplier;
 
 /**
  * @author liujunjia
- * 2021/7/22 11:44
+ * 2021/7/22 11: 44
  **/
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class ExecuteUtils {

@@ -73,7 +73,7 @@ export function detail(id) {
 
 #### layout
 
-布局相关的组件：具体是Sidebar，Navbar，AppMain。其中 Navbar 里使用了Breadcrumb 和 Hamburger
+布局相关的组件：具体是 Sidebar，Navbar，AppMain。其中 Navbar 里使用了 Breadcrumb 和 Hamburger
 
 #### main.js
 
@@ -212,7 +212,7 @@ http://mockjs.com/examples.html
 
 这里的部署主要针对接入 usp
 
-因为接入 usp 的页面并不是部署在域名的根目录，以绝对路径请求的话转发不到网关拿不到资源，所以首先要修改 vue.config.js 中的 publicPath，将`/`改为`./`
+因为接入 usp 的页面并不是部署在域名的根目录，以绝对路径请求的话转发不到网关拿不到资源，所以首先要修改 vue.config.js 中的 publicPath，将 `/` 改为 `./`
 
 其次，还要修改 .env 文件的 VUE_APP_BASE_API，改成对应 usp 域名的 /proxy/aaa/bbb , aaa 为 usp 项目名称，bbb 为接口前缀，这样使得请求可以准确的到达网关，可以被进一步转发至后端
 

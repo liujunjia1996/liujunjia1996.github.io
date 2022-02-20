@@ -2,7 +2,7 @@
 ![image](https://user-images.githubusercontent.com/43411944/140270326-5dbc4219-efb9-4a7f-b150-3e7162d73721.png)
 
 ## 执行顺序
-explain 结果的第一列 id 用来标识整个 SQL 的执行顺序。id 如果相同，从上往下依次执行；id不同，id 值越大，执行优先级越高，越先被执行；如果行引用其他行的并集结果，则该值可以为 NULL，如例 1 的用于去重的临时表的 id 就是 null。
+explain 结果的第一列 id 用来标识整个 SQL 的执行顺序。id 如果相同，从上往下依次执行；id 不同，id 值越大，执行优先级越高，越先被执行；如果行引用其他行的并集结果，则该值可以为 NULL，如例 1 的用于去重的临时表的 id 就是 null。
 
 ## 例 1
 ```
@@ -42,6 +42,6 @@ CREATE TABLE `teacher` (
 
  结果集记录保存到临时表的过程，称之为物化 (Materialize)，该临时表称之为物化表。   
 
-2) 物化之后，对于 student 表，如表记录的 teacherid 值在物化表中，会记录到最终的结果集；同样对于物化表，其每个列值 (teacherid) 在 student 表能找到对应列的值，就能写到最终结果集。所以就相当于student 表与物化表 (materialize_table) 内联。   
+2) 物化之后，对于 student 表，如表记录的 teacherid 值在物化表中，会记录到最终的结果集；同样对于物化表，其每个列值 (teacherid) 在 student 表能找到对应列的值，就能写到最终结果集。所以就相当于 student 表与物化表 (materialize_table) 内联。   
 另外，如果把 teacher 表的 teacherid 设置为主键，那么这个查询直接就可以通过表上拉优化，不再需要临时表去重
 ![image](https://user-images.githubusercontent.com/43411944/141982645-78b26a5b-86c3-4a29-bc06-b23d1acbe281.png)

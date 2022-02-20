@@ -16,7 +16,7 @@ opacity 和 display 会被继承：
 
 ## 性能
 
-display: none：修改元素会造成文档回流,读屏器不会读取 display: none 元素内容，性能消耗较大
+display: none：修改元素会造成文档回流, 读屏器不会读取 display: none 元素内容，性能消耗较大
 
 visibility: hidden：修改元素只会造成本元素的重绘，性能消耗较少，读屏器会读取 visibility: hidden 元素内容
 

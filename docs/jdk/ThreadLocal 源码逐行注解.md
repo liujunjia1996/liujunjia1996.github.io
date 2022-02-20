@@ -5,7 +5,7 @@
 下面是我自己注释的完整 ThreadLocal 的源码，来自 openJdk 11.
 
 ```java
-/*
+
  * Copyright (c) 1997, 2013, Oracle and/or its affiliates. All rights reserved.
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
  *
@@ -46,7 +46,7 @@ import java.util.function.Supplier;
  * static fields in classes that wish to associate state with a thread (e.g.,
  * a user ID or Transaction ID).
  *
- * <p>For example, the class below generates unique identifiers local to each
+ * <p> For example, the class below generates unique identifiers local to each
  * thread.
  * A thread's id is assigned the first time it invokes {@code ThreadId.get()}
  * and remains unchanged on subsequent calls.
@@ -58,9 +58,9 @@ import java.util.function.Supplier;
  *     private static final AtomicInteger nextId = new AtomicInteger(0);
  *
  *     // Thread local variable containing each thread's ID
- *     private static final ThreadLocal&lt;Integer&gt; threadId =
- *         new ThreadLocal&lt;Integer&gt;() {
- *             &#64;Override protected Integer initialValue() {
+ *     private static final ThreadLocal&lt; Integer&gt; threadId =
+ *         new ThreadLocal&lt; Integer&gt;() {
+ *             &#64; Override protected Integer initialValue() {
  *                 return nextId.getAndIncrement();
  *         }
  *     };
@@ -71,7 +71,7 @@ import java.util.function.Supplier;
  *     }
  * }
  * </pre>
- * <p>Each thread holds an implicit reference to its copy of a thread-local
+ * <p> Each thread holds an implicit reference to its copy of a thread-local
  * variable as long as the thread is alive and the {@code ThreadLocal}
  * instance is accessible; after a thread goes away, all of its copies of
  * thread-local instances are subject to garbage collection (unless other
@@ -127,7 +127,7 @@ public class ThreadLocal<T> {
      * most once per thread, but it may be invoked again in case of
      * subsequent invocations of {@link #remove} followed by {@link #get}.
      *
-     * <p>This implementation simply returns {@code null}; if the
+     * <p> This implementation simply returns {@code null}; if the
      * programmer desires thread-local variables to have an initial
      * value other than {@code null}, {@code ThreadLocal} must be
      * subclassed, and this method overridden.  Typically, an
@@ -261,7 +261,7 @@ public class ThreadLocal<T> {
     public void remove() {
         ThreadLocalMap m = getMap(Thread.currentThread());
         if (m != null) {
-            // 调用 map 自身的 remove 方法,传入自身的引用
+            // 调用 map 自身的 remove 方法, 传入自身的引用
             m.remove(this);
         }
     }
@@ -475,7 +475,7 @@ public class ThreadLocal<T> {
          *
          * @param key the thread local object
          * @param i   the table index for key's hash code
-         * @param e   the entry at table[i]
+         * @param e   the entry at table [i]
          * @return the entry associated with key, or null if no such
          */
         private Entry getEntryAfterMiss(ThreadLocal<?> key, int i, Entry e) {
@@ -531,7 +531,7 @@ public class ThreadLocal<T> {
                     return;
                 }
 
-                // 值为 null,说明过期了，剩下的逻辑全部由 replaceStaleEntry 方法实现
+                // 值为 null, 说明过期了，剩下的逻辑全部由 replaceStaleEntry 方法实现
                 if (k == null) {
                     replaceStaleEntry(key, value, i);
                     return;
@@ -540,7 +540,7 @@ public class ThreadLocal<T> {
             // 上面的循环没发现重复的 或 没有发现过期的 entry
             tab[i] = new Entry(key, value);
             int sz = ++size;
-            // 从 i 向后清理一些 stale entry,并且判断一下容量是否大于阈值
+            // 从 i 向后清理一些 stale entry, 并且判断一下容量是否大于阈值
             // 如果没有清理掉 stale entry，sz 肯定不会比阈值大，所以用短路与
             if (!cleanSomeSlots(i, sz) && sz >= threshold)
                 // rehash 这个函数不仅有 rehash 还有 resize 的逻辑

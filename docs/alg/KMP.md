@@ -56,10 +56,10 @@ public class KMP {
         for (int j = 1; j < l; j++) {
             var char_ = pat.charAt(j);
             while (i > 0 && char_ != pat.charAt(i)) {
-                // 这里为什么是 i = next[i - 1]; 而不是 i-- ？
+                // 这里为什么是 i = next [i - 1]; 而不是 i-- ？
                 // eg aabaaf
                 // 有一种对称的感觉，后半部分其实是比较过的了，
-                // 所以直接通过 next[i - 1] 再找公共前后缀比一下末尾就行
+                // 所以直接通过 next [i - 1] 再找公共前后缀比一下末尾就行
                 i = next[i - 1];
             }
             if (char_ == pat.charAt(i)) {

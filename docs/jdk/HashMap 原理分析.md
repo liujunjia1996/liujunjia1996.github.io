@@ -44,7 +44,7 @@ public HashMap(int initialCapacity, float loadFactor) {
         throw new IllegalArgumentException("Illegal load factor: " +
                                             loadFactor);
     this.loadFactor = loadFactor;
-    // tableSizeFor 返回一个不小于给定值的最小的 2 的指数值，例如，7->8，8->8，9->16
+    // tableSizeFor 返回一个不小于给定值的最小的 2 的指数值，例如，7-> 8，8-> 8，9-> 16
     // 至于这里为什么这样设置阈值下文会有解释
     this.threshold = tableSizeFor(initialCapacity);
 }
@@ -110,7 +110,7 @@ hashcode 用来定位 node 在数组上的位置，equals 用来判断，当 has
 ### HashMap 的并发有什么问题（chm 解决了什么问题）
 
 ```java
-/*
+
  * Copyright (c) 1997, 2018, Oracle and/or its affiliates. All rights reserved.
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
  *
@@ -158,7 +158,7 @@ import java.util.function.Function;
  * the order of the map; in particular, it does not guarantee that the order
  * will remain constant over time.
  *
- * <p>This implementation provides constant-time performance for the basic
+ * <p> This implementation provides constant-time performance for the basic
  * operations ({@code get} and {@code put}), assuming the hash function
  * disperses the elements properly among the buckets.  Iteration over
  * collection views requires time proportional to the "capacity" of the
@@ -167,18 +167,18 @@ import java.util.function.Function;
  * capacity too high (or the load factor too low) if iteration performance is
  * important.
  *
- * <p>An instance of {@code HashMap} has two parameters that affect its
- * performance: <i>initial capacity</i> and <i>load factor</i>.  The
- * <i>capacity</i> is the number of buckets in the hash table, and the initial
+ * <p> An instance of {@code HashMap} has two parameters that affect its
+ * performance: <i> initial capacity </i> and <i> load factor </i>.  The
+ * <i> capacity </i> is the number of buckets in the hash table, and the initial
  * capacity is simply the capacity at the time the hash table is created.  The
- * <i>load factor</i> is a measure of how full the hash table is allowed to
+ * <i> load factor </i> is a measure of how full the hash table is allowed to
  * get before its capacity is automatically increased.  When the number of
  * entries in the hash table exceeds the product of the load factor and the
- * current capacity, the hash table is <i>rehashed</i> (that is, internal data
+ * current capacity, the hash table is <i> rehashed </i> (that is, internal data
  * structures are rebuilt) so that the hash table has approximately twice the
  * number of buckets.
  *
- * <p>As a general rule, the default load factor (.75) offers a good
+ * <p> As a general rule, the default load factor (.75) offers a good
  * tradeoff between time and space costs.  Higher values decrease the
  * space overhead but increase the lookup cost (reflected in most of
  * the operations of the {@code HashMap} class, including
@@ -189,7 +189,7 @@ import java.util.function.Function;
  * maximum number of entries divided by the load factor, no rehash
  * operations will ever occur.
  *
- * <p>If many mappings are to be stored in a {@code HashMap}
+ * <p> If many mappings are to be stored in a {@code HashMap}
  * instance, creating it with a sufficiently large capacity will allow
  * the mappings to be stored more efficiently than letting it perform
  * automatic rehashing as needed to grow the table.  Note that using
@@ -198,9 +198,9 @@ import java.util.function.Function;
  * are {@link Comparable}, this class may use comparison order among
  * keys to help break ties.
  *
- * <p><strong>Note that this implementation is not synchronized.</strong>
+ * <p> <strong> Note that this implementation is not synchronized.</strong>
  * If multiple threads access a hash map concurrently, and at least one of
- * the threads modifies the map structurally, it <i>must</i> be
+ * the threads modifies the map structurally, it <i> must </i> be
  * synchronized externally.  (A structural modification is any operation
  * that adds or deletes one or more mappings; merely changing the value
  * associated with a key that an instance already contains is not a
@@ -210,11 +210,11 @@ import java.util.function.Function;
  * If no such object exists, the map should be "wrapped" using the
  * {@link Collections#synchronizedMap Collections.synchronizedMap}
  * method.  This is best done at creation time, to prevent accidental
- * unsynchronized access to the map:<pre>
- *   Map m = Collections.synchronizedMap(new HashMap(...));</pre>
+ * unsynchronized access to the map: <pre>
+ *   Map m = Collections.synchronizedMap(new HashMap(...)); </pre>
  *
- * <p>The iterators returned by all of this class's "collection view methods"
- * are <i>fail-fast</i>: if the map is structurally modified at any time after
+ * <p> The iterators returned by all of this class's "collection view methods"
+ * are <i> fail-fast </i>: if the map is structurally modified at any time after
  * the iterator is created, in any way except through the iterator's own
  * {@code remove} method, the iterator will throw a
  * {@link ConcurrentModificationException}.  Thus, in the face of concurrent
@@ -222,17 +222,17 @@ import java.util.function.Function;
  * arbitrary, non-deterministic behavior at an undetermined time in the
  * future.
  *
- * <p>Note that the fail-fast behavior of an iterator cannot be guaranteed
+ * <p> Note that the fail-fast behavior of an iterator cannot be guaranteed
  * as it is, generally speaking, impossible to make any hard guarantees in the
  * presence of unsynchronized concurrent modification.  Fail-fast iterators
  * throw {@code ConcurrentModificationException} on a best-effort basis.
  * Therefore, it would be wrong to write a program that depended on this
- * exception for its correctness: <i>the fail-fast behavior of iterators
+ * exception for its correctness: <i> the fail-fast behavior of iterators
  * should be used only to detect bugs.</i>
  *
- * <p>This class is a member of the
+ * <p> This class is a member of the
  * <a href="{@docRoot}/java.base/java/util/package-summary.html#CollectionsFramework">
- * Java Collections Framework</a>.
+ * Java Collections Framework </a>.
  *
  * @param <K> the type of keys maintained by this map
  * @param <V> the type of mapped values
@@ -268,7 +268,7 @@ public class HashMap<K, V> extends AbstractMap<K, V>
      *
      * Tree bins (i.e., bins whose elements are all TreeNodes) are
      * ordered primarily by hashCode, but in the case of ties, if two
-     * elements are of the same "class C implements Comparable<C>",
+     * elements are of the same "class C implements Comparable <C>",
      * type then their compareTo method is used for ordering. (We
      * conservatively check generic types via reflection to validate
      * this -- see method comparableClassFor).  The added complexity
@@ -350,7 +350,7 @@ public class HashMap<K, V> extends AbstractMap<K, V>
     /**
      * The maximum capacity, used if a higher value is implicitly specified
      * by either of the constructors with arguments.
-     * MUST be a power of two <= 1<<30.
+     * MUST be a power of two <= 1 << 30.
      * 即 2 的 31 次方
      */
     static final int MAXIMUM_CAPACITY = 1 << 30;
@@ -467,8 +467,8 @@ public class HashMap<K, V> extends AbstractMap<K, V>
     }
 
     /**
-     * Returns x's Class if it is of the form "class C implements
-     * Comparable<C>", else null.
+     * Returns x's Class if it is of the form " class C implements
+     * Comparable <C> ", else null.
      * 红黑树用的
      */
     static Class<?> comparableClassFor(Object x) {
@@ -685,12 +685,12 @@ public class HashMap<K, V> extends AbstractMap<K, V>
      * Returns the value to which the specified key is mapped,
      * or {@code null} if this map contains no mapping for the key.
      *
-     * <p>More formally, if this map contains a mapping from a key
-     * {@code k} to a value {@code v} such that {@code (key==null ? k==null :
+     * <p> More formally, if this map contains a mapping from a key
+     * {@code k} to a value {@code v} such that {@code (key == null ? k == null :
      * key.equals(k))}, then this method returns {@code v}; otherwise
      * it returns {@code null}.  (There can be at most one such mapping.)
      *
-     * <p>A return value of {@code null} does not <i>necessarily</i>
+     * <p> A return value of {@code null} does not <i> necessarily </i>
      * indicate that the map contains no mapping for the key; it's also
      * possible that the map explicitly maps the key to {@code null}.
      * The {@link #containsKey containsKey} operation may be used to
@@ -905,7 +905,7 @@ public class HashMap<K, V> extends AbstractMap<K, V>
                             // 数组的长度一定是 2 的 N 次方，做与运算，那么该 hash 值可参与计算的有效二进制位就是和长度二进制对等的后几位
                             // 如果结果为 0，说明 hash 值中参与计算的对等的二进制位的最高位一定为 0.
                             // 因为数组长度的二进制有效最高位是 1（例如 16 对应的二进制是 10000），
-                            // 只有 0**** 和 10000 进行与运算结果才为 00000
+                            // 只有 0 **** 和 10000 进行与运算结果才为 00000
                             if ((e.hash & oldCap) == 0) {
                                 // PS4
                                 if (loTail == null) // 如果没有尾，说明链表为空
@@ -917,7 +917,7 @@ public class HashMap<K, V> extends AbstractMap<K, V>
 
                             // 如果与运算结果不为 0，说明 hash & newCap 值比旧位置大于一个老数组长度（例如 hash 值为 17）
                             // 此时该元素应该放置到新数组的高位位置上
-                            else {  // 以下逻辑同PS4
+                            else {  // 以下逻辑同 PS4
                                 if (hiTail == null)
                                     hiHead = e;
                                 else
@@ -1337,7 +1337,7 @@ public class HashMap<K, V> extends AbstractMap<K, V>
     /**
      * {@inheritDoc}
      *
-     * <p>This method will, on a best-effort basis, throw a
+     * <p> This method will, on a best-effort basis, throw a
      * {@link ConcurrentModificationException} if it is detected that the
      * mapping function modifies this map during computation.
      *
@@ -1407,7 +1407,7 @@ public class HashMap<K, V> extends AbstractMap<K, V>
     /**
      * {@inheritDoc}
      *
-     * <p>This method will, on a best-effort basis, throw a
+     * <p> This method will, on a best-effort basis, throw a
      * {@link ConcurrentModificationException} if it is detected that the
      * remapping function modifies this map during computation.
      *
@@ -1442,7 +1442,7 @@ public class HashMap<K, V> extends AbstractMap<K, V>
     /**
      * {@inheritDoc}
      *
-     * <p>This method will, on a best-effort basis, throw a
+     * <p> This method will, on a best-effort basis, throw a
      * {@link ConcurrentModificationException} if it is detected that the
      * remapping function modifies this map during computation.
      *
@@ -1510,7 +1510,7 @@ public class HashMap<K, V> extends AbstractMap<K, V>
     /**
      * {@inheritDoc}
      *
-     * <p>This method will, on a best-effort basis, throw a
+     * <p> This method will, on a best-effort basis, throw a
      * {@link ConcurrentModificationException} if it is detected that the
      * remapping function modifies this map during computation.
      *
@@ -1656,9 +1656,9 @@ public class HashMap<K, V> extends AbstractMap<K, V>
      *
      * @param s the stream
      * @throws IOException if an I/O error occurs
-     * @serialData The <i>capacity</i> of the HashMap (the length of the
+     * @serialData The <i> capacity </i> of the HashMap (the length of the
      * bucket array) is emitted (int), followed by the
-     * <i>size</i> (an int, the number of key-value
+     * <i> size </i> (an int, the number of key-value
      * mappings), followed by the key (Object) and value (Object)
      * for each key-value mapping.  The key-value mappings are
      * emitted in no particular order.
@@ -1708,7 +1708,7 @@ public class HashMap<K, V> extends AbstractMap<K, V>
             threshold = ((cap < MAXIMUM_CAPACITY && ft < MAXIMUM_CAPACITY) ?
                     (int) ft : Integer.MAX_VALUE);
 
-            // Check Map.Entry[].class since it's the nearest public type to
+            // Check Map.Entry [].class since it's the nearest public type to
             // what we're actually creating.
             SharedSecrets.getJavaObjectInputStreamAccess().checkArray(s, Map.Entry[].class, cap);
             @SuppressWarnings({"rawtypes", "unchecked"})
@@ -2118,7 +2118,7 @@ public class HashMap<K, V> extends AbstractMap<K, V>
     }
 
     // Callbacks to allow LinkedHashMap post-actions
-    // 这个三个方法都是为了继承HashMap的LinkedHashMap类服务的
+    // 这个三个方法都是为了继承 HashMap 的 LinkedHashMap 类服务的
     void afterNodeAccess(Node<K, V> p) {
     }
 

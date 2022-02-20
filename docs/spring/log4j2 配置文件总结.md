@@ -18,9 +18,9 @@
 
 用来定义输出到控制台的 Appender.
 
-* name: 指定Appender的名字.
+* name: 指定 Appender 的名字.
 
-* target: SYSTEM_OUT 或 SYSTEM_ERR,一般只设置默认: SYSTEM_OUT.
+* target: SYSTEM_OUT 或 SYSTEM_ERR, 一般只设置默认: SYSTEM_OUT.
 
 * PatternLayout: 输出格式，不设置默认为: %m%n.
 
@@ -50,7 +50,7 @@
   
   * TimeBasedTriggeringPolicy: Policies 子节点，基于时间的滚动策略，interval 属性用来指定多久滚动一次，默认是 1 hour。modulate = true 用来调整时间：比如现在是早上 3am，interval 是 4，那么第一次滚动是在 4am，接着是 8am，12am...而不是 7am.
   * SizeBasedTriggeringPolicy: Policies 子节点，基于指定文件大小的滚动策略，size 属性用来定义每个日志文件的大小.
-  * DefaultRolloverStrategy: 用来指定同一个文件夹下最多有几个日志文件时开始删除最旧的，创建新的(通过max属性)。
+  * DefaultRolloverStrategy: 用来指定同一个文件夹下最多有几个日志文件时开始删除最旧的，创建新的(通过 max 属性)。
 
 #### PatternLayout
 
@@ -58,9 +58,9 @@
 |:--- |:------------------------------------ |
 | %m  | 输出代码中指定的消息                           |
 | %p  | 输出优先级，DEBUG，INFO，WARN，ERROR，FATAL    |
-| %r  | 输出自应用启动到输出该log信息耗费的毫秒数               |
+| %r  | 输出自应用启动到输出该 log 信息耗费的毫秒数               |
 | %t  | 输出产生该日志事件的线程名                        |
-| %n  | 输出一个回车换行符，Windows平台为 /r/n，Unix平台为 /n |
+| %n  | 输出一个回车换行符，Windows 平台为 /r/n，Unix 平台为 /n |
 | %d  | 输出日志时间点的日期或时间                        |
 | %c  | 输出所属的类目，通常就是所在类的全名，%c{2} 意为保留最后两层    |
 | %l  | 输出日志事件的发生位置，包括包名，方法名，行号              |
@@ -68,25 +68,25 @@
 
 ### Loggers 节点
 
-常见的有两种:Root和Logger.
+常见的有两种: Root 和 Logger.
 
 #### Root 节点
 
 用来指定项目的根日志，如果没有单独指定 Logger，那么就会默认使用该 Root 日志输出
 
-* level: 日志输出级别，共有8个级别，按照从低到高为：All < Trace < Debug < Info < Warn < Error < Fatal < OFF.
+* level: 日志输出级别，共有 8 个级别，按照从低到高为：All < Trace < Debug < Info < Warn < Error < Fatal < OFF.
 
 * appenderRef：Root 的子节点，用来指定该日志输出到哪个 Appender.
 
 #### Logger 节点
 
-用来单独指定日志的形式，比如要为指定包下的class指定不同的日志级别等。
+用来单独指定日志的形式，比如要为指定包下的 class 指定不同的日志级别等。
 
 * level: 日志输出级别
 
-* name: 用来指定该 Logger 所适用的类或者类所在的包全路径,继承自 Root 节点.
+* name: 用来指定该 Logger 所适用的类或者类所在的包全路径, 继承自 Root 节点.
 
-* AppenderRef：Logger 的子节点，用来指定该日志输出到哪个 Appender,如果没有指定，就会默认继承自 Root.如果指定了，那么会在指定的这个 Appender 和 Root 的 Appender 中都会输出，此时我们可以设置 Logger 的 additivity="false" 只在自定义的 Appender 中进行输出。
+* AppenderRef：Logger 的子节点，用来指定该日志输出到哪个 Appender, 如果没有指定，就会默认继承自 Root.如果指定了，那么会在指定的这个 Appender 和 Root 的 Appender 中都会输出，此时我们可以设置 Logger 的 additivity = "false" 只在自定义的 Appender 中进行输出。
 
 ## 模板
 

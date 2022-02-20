@@ -108,7 +108,7 @@ Kafka 客户端一共有两个线程，主线程和 sender 线程，这两个线
 
 2. buffer.memory
 
-   消息收集器的大小，默认为 32m，如果生产者发送消息的速度超过发送到服务器的速度，则会导致生产者空间不足，这个时候 KafkaProducer 的 send 方法调用要么被阻塞，要么抛出异常，这个取决于参数max.block.ms 的配置，此参数的默认值为60000,即60 秒
+   消息收集器的大小，默认为 32m，如果生产者发送消息的速度超过发送到服务器的速度，则会导致生产者空间不足，这个时候 KafkaProducer 的 send 方法调用要么被阻塞，要么抛出异常，这个取决于参数 max.block.ms 的配置，此参数的默认值为 60000, 即 60 秒
 
 3. batch.size
 
@@ -121,7 +121,7 @@ Kafka 客户端一共有两个线程，主线程和 sender 线程，这两个线
 
 4. linger.ms
 
-   指定生产者发送 ProducerBatch 之前等待更多消息（ ProducerRecord ）加入 Producer Batch 的时间，默认值为0。生产者客户端会在ProducerBatch 被填满或等待时间超过 linger.ms 值时发送出去。
+   指定生产者发送 ProducerBatch 之前等待更多消息（ ProducerRecord ）加入 Producer Batch 的时间，默认值为 0。生产者客户端会在 ProducerBatch 被填满或等待时间超过 linger.ms 值时发送出去。
 
    增大这个参数的值会增加消息的延迟，但是同时能提升一定的吞吐量
 
@@ -134,7 +134,7 @@ Kafka 客户端一共有两个线程，主线程和 sender 线程，这两个线
 
 ![image](https://user-images.githubusercontent.com/43411944/144708429-1c5155f9-f544-44bb-86a2-448adb182fa2.png)
 
-2. 同一个消费者组内，每个消费者消费的分区数为`总分数/消费者个数`，如果不能整除就会出现负载不均衡的问题，甚至如果消费者个数大于分区数会出现某些消费者空闲的问题
+2. 同一个消费者组内，每个消费者消费的分区数为 `总分数/消费者个数`，如果不能整除就会出现负载不均衡的问题，甚至如果消费者个数大于分区数会出现某些消费者空闲的问题
 
 ![image](https://user-images.githubusercontent.com/43411944/144708424-98901b0f-dd2e-44ab-946d-36f7aa21592c.png)
 

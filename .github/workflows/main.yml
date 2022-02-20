@@ -7,15 +7,18 @@ on:
 jobs:
   main:
     runs-on: ubuntu-latest
+
     steps:
     - name: Checkout
       uses: actions/checkout@v2.3.1
-      with:
-        persist-credentials: false
+      run:
+          npm run ci
+          git config --global user.name 'git-action'
+          git config --global user.email 'git-action@users.noreply.github.com'
+          git add .
+          git commit -m "auto format"
+          git push
         
-    - name: Install and Build
-      run: |
-        npm run ci
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@4.1.6
       with:
