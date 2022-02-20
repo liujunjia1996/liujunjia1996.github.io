@@ -1,0 +1,1 @@
+const e={key:"v-8daa1a0e",path:"/",title:"",lang:"zh-CN",frontmatter:{home:!0,heroText:"welcome",tagline:"step by step",footer:"liujunjia1996 / xi'an"},excerpt:"",headers:[],git:{updatedTime:1645369891e3,contributors:[{name:"liujunjia",email:"853300905@qq.com",commits:1}]},filePathRelative:"README.md"};export{e as data};
