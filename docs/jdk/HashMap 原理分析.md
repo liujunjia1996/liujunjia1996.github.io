@@ -110,7 +110,7 @@ hashcode 用来定位 node 在数组上的位置，equals 用来判断，当 has
 ### HashMap 的并发有什么问题（chm 解决了什么问题）
 
 ```java
-
+/**
  * Copyright (c) 1997, 2018, Oracle and/or its affiliates. All rights reserved.
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
  *
