@@ -23,7 +23,7 @@
 			}
     </script>
     <link rel="icon" href="/images/logo.png"><title>liujunjia's blog</title><meta name="description" content="">
-    <link rel="modulepreload" href="/assets/app.c6a7e3f8.js"><link rel="modulepreload" href="/assets/值传递和引用传递.html.5c5188e2.js"><link rel="modulepreload" href="/assets/值传递和引用传递.html.f2e90fcb.js"><link rel="modulepreload" href="/assets/plugin-vue_export-helper.21dcd24c.js">
+    <link rel="modulepreload" href="/assets/app.b8ba9cee.js"><link rel="modulepreload" href="/assets/值传递和引用传递.html.90716cee.js"><link rel="modulepreload" href="/assets/值传递和引用传递.html.54e45a19.js"><link rel="modulepreload" href="/assets/plugin-vue_export-helper.21dcd24c.js">
     <link rel="stylesheet" href="/assets/style.8a91f6b7.css">
   </head>
   <body>
@@ -51,6 +51,6 @@
     user<span class="token punctuation">.</span><span class="token function">setGender</span><span class="token punctuation">(</span><span class="token string">&quot;2&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><p>只添加了一行 <code>user = new User()</code>，这时候对形参的修改就不能影响实参了。</p><p>这两个结合起来看，就能大概明白 java 为什么只有值传递了。</p><p>因为在 java 中形参和实参不是同一个变量，只是在调用函数时实参指向的堆地址值，传递给了形参，这时实参和形参就指向了同一个对象；</p><p>但是我们完全可以在函数中让形参指向另一个对象，而且还不影响实参的指向，这一点引用传递是做不到的。</p><h2 id="总结" tabindex="-1"><a class="header-anchor" href="#总结" aria-hidden="true">#</a> 总结</h2><p>值传递和引用传递的区别并不是传递的内容(也就是说跟参数是基本类型还是引用类型没关系)，而是要看实参到底有没有被复制一份给形参。</p><!--]--></div><footer class="page-meta"><!----><div class="meta-item last-updated"><span class="meta-item-label">Last Updated: </span><!----></div><div class="meta-item contributors"><span class="meta-item-label">Contributors: </span><span class="meta-item-info"><!--[--><!--[--><span class="contributor" title="email: 43411944+liujunjia1996@users.noreply.github.com">liujunjia</span><!----><!--]--><!--]--></span></div></footer><!----><!--[--><!--[--><!----><!--]--><!--]--></main><!--]--></div><!----><!--]--></div>
-    <script type="module" src="/assets/app.c6a7e3f8.js" defer></script>
+    <script type="module" src="/assets/app.b8ba9cee.js" defer></script>
   </body>
 </html>
