@@ -46,6 +46,9 @@ module.exports = {
                                 text: '之和问题',
                                 link: '/alg/之和问题.md',
                               }, {
+                                text: '二叉树的简单遍历',
+                                link: '/alg/二叉树的简单遍历.md',
+                              }, {
                                 text: '反转链表',
                                 link: '/alg/反转链表.md',
                               }, {
