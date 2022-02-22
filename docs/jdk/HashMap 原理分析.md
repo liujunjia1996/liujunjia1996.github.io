@@ -109,6 +109,20 @@ hashcode 用来定位 node 在数组上的位置，equals 用来判断，当 has
 
 ### HashMap 的并发有什么问题（chm 解决了什么问题）
 
+多线程操作 HashMap 可能会造成丢数据，或死循环链表。chm 通过加锁解决了这个问题。  
+1.7 是分段锁，但是缺陷是 Segment 数组一旦初始化了之后不会扩容，不能随着容量的提升而自动增加并发度，所以需要使用者提前评估需要多大的并发度。  
+1.8 是槽位锁，一个 hash 槽就是一把锁，细粒度很小，并发度跟容量正相关，性能较好。
+
+### 为什么 ConcurrentHashMap 不支持 key 或者 value 为 null ？
+
+首先， key 为什么也不能为 null ？我不知道，没想明白，可能是作者 lea 佬不喜欢 null 值。那 value 为什么不能为 null ？因为在多线程情况下， null 值会产生二义性，因为你不清楚 map 里到底是不存在在这个 key ，还是说被 put(key，null)。这里可能有人会说，那 HashMap 不一样有这个问题？HashMap 可以通过 containsKey 来判断是否存在这个 key，而多线程使用的 ConcurrentHashMap 就不能够。比如你 get（key） 得到了null，此时 map 里面没有这个 key 的，但是你不知道，所以你想调用 containsKey 看看，而恰巧在你调用之前，别的线程 put 了这个 key ，这样你 containsKey 就发现有这个 key，这是不是就发生“误会”了。
+
+### ConcurrentHashMap 的 size 怎么算？
+
+* JDK1.7 和 JDK1.8 对 size 的计算是不一样的。 1.7 中是先不加锁计算三次，如果三次结果不一样再锁全部 Segment 累加。
+* JDK1.8 size 是通过对 baseCount 和 counterCell 进行 CAS 计算（先尝试更新 baseCount，cas baseCount 失败再 cas counterCell，如果还是失败就重试直到 cas 成功），最终通过 baseCount 和 遍历 CounterCell 数组得出 size。
+* JDK1.8 推荐使用 mappingCount 方法，因为这个方法的返回值是 long 类型，不会因为 size 方法是 int 类型限制最大值。
+
 ```java
 /**
  * Copyright (c) 1997, 2018, Oracle and/or its affiliates. All rights reserved.
