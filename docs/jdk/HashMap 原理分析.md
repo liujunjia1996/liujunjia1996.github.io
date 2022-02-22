@@ -115,7 +115,7 @@ hashcode 用来定位 node 在数组上的位置，equals 用来判断，当 has
 
 ### 为什么 ConcurrentHashMap 不支持 key 或者 value 为 null ？
 
-首先， key 为什么也不能为 null ？我不知道，没想明白，可能是作者 lea 佬不喜欢 null 值。那 value 为什么不能为 null ？因为在多线程情况下， null 值会产生二义性，因为你不清楚 map 里到底是不存在在这个 key ，还是说被 put(key，null)。这里可能有人会说，那 HashMap 不一样有这个问题？HashMap 可以通过 containsKey 来判断是否存在这个 key，而多线程使用的 ConcurrentHashMap 就不能够。比如你 get（key） 得到了null，此时 map 里面没有这个 key 的，但是你不知道，所以你想调用 containsKey 看看，而恰巧在你调用之前，别的线程 put 了这个 key ，这样你 containsKey 就发现有这个 key，这是不是就发生“误会”了。
+首先， key 为什么也不能为 null ？我不知道，没想明白，可能是作者 lea 佬不喜欢 null 值。那 value 为什么不能为 null ？因为在多线程情况下， null 值会产生二义性，因为你不清楚 map 里到底是不存在在这个 key ，还是说被 put(key，null)。这里可能有人会说，那 HashMap 不一样有这个问题？HashMap 可以通过 containsKey 来判断是否存在这个 key，而多线程使用的 ConcurrentHashMap 就不能够。比如你 get（key） 得到了 null，此时 map 里面没有这个 key 的，但是你不知道，所以你想调用 containsKey 看看，而恰巧在你调用之前，别的线程 put 了这个 key ，这样你 containsKey 就发现有这个 key，这是不是就发生“误会”了。
 
 ### ConcurrentHashMap 的 size 怎么算？
 
