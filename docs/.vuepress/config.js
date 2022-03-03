@@ -1,9 +1,9 @@
 const { path } = require('@vuepress/utils')
 module.exports = {
-    lang: 'zh-CN',
-    title: "liujunjia's blog",
-    themeConfig: {
-        navbar: [ {
+lang: 'zh-CN',
+title: "liujunjia's blog",
+themeConfig: {
+    navbar: [ {
                     link: '/alg',
                     text: '算法',
                   }
@@ -32,7 +32,7 @@ module.exports = {
                     text: 'spring',
                   }
                 ],
-        sidebar: {'/21 年书单': {
+    sidebar: {'/21 年书单': {
                         text: '21 年书单',
                         link: '/21 年书单.md',
                       },'/alg':[{
@@ -132,6 +132,9 @@ module.exports = {
                                 text: 'git 基础',
                                 link: '/other/git 基础.md',
                               }, {
+                                text: 'java 数组声明',
+                                link: '/other/java 数组声明.md',
+                              }, {
                                 text: 'oauth 2.0 ',
                                 link: '/other/oauth 2.0 .md',
                               }, {
@@ -176,23 +179,29 @@ module.exports = {
                                 link: '/spring/log4j2 配置文件总结.md',
                               }],
                }] },
-    },
-    head: [['link', { rel: 'icon', href: '/images/logo.png' }]],
-    bundler: '@vuepress/bundler-vite',
-    theme: path.resolve(__dirname, './theme'),
-    plugins: [
-      [
-        '@vuepress/plugin-search',
-        {
-          locales: {
-            '/': {
-              placeholder: 'Search',
-            },
-            '/zh/': {
-              placeholder: '搜索',
-            },
-          },
+},
+head: [['link', { rel: 'icon', href: '/images/logo.png' }]],
+bundler: '@vuepress/bundler-vite',
+theme: path.resolve(__dirname, './theme'),
+plugins: [
+  [
+    '@vuepress/plugin-search',
+    {
+      locales: {
+        '/': {
+          placeholder: 'Search',
         },
-      ],
-    ],
+        '/zh/': {
+          placeholder: '搜索',
+        },
+      },
+    },
+  ],
+  [
+    '@vuepress/plugin-register-components',
+    {
+      componentsDir: path.resolve(__dirname, './components')
+    }
+  ]
+],
 }
