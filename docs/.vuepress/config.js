@@ -115,6 +115,9 @@ themeConfig: {
                               }],
                }] ,'/middleware':[{
                     children: [ {
+                                text: 'docker 部署网络不通问题',
+                                link: '/middleware/docker 部署网络不通问题.md',
+                              }, {
                                 text: 'kafka 昌平机房发送延时',
                                 link: '/middleware/kafka 昌平机房发送延时.md',
                               }, {
