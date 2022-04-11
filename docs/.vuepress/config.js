@@ -156,6 +156,9 @@ themeConfig: {
                                 text: '接口幂等',
                                 link: '/other/接口幂等.md',
                               }, {
+                                text: '油猴自动登录',
+                                link: '/other/油猴自动登录.md',
+                              }, {
                                 text: '解决 git 命令慢',
                                 link: '/other/解决 git 命令慢.md',
                               }, {
