@@ -6,6 +6,9 @@
 这个方式确实有效，十个服务都顺利的注册到 nacos 上了，而且它们之间的调用也没有问题；接着，就准备扩容每个节点，扩了两个服务之后，问题就来了，依然报 unknow host 。。。。  
 静下心来，仔细想了想平台的两个实例部署和一个实例部署有什么区别，最后发现两个实例部署时会强制双 az ，这个就是问题的根因！跨可用区之间的 pod 网络是不通的。  
 后面就这个问题，和 pass 平台的人进行了一波沟通，他们确认了有这个问题，也提供了解决方案。  
+
+![image](https://user-images.githubusercontent.com/43411944/162653511-e474e6c2-fb61-4480-a601-0d02613d9d90.png)
+
 具体的情况是这样的：pod 是运行在 vm 宿主机上的，跨可用区的 pod 网络不通，但是 vm 之间网络是没问题的，所以想解决这个问题，需要把 pod 之间的通信转换为 vm 之间的通信；  
 显然，平台也预见到了这个问题，所以平台的人在启动 docker pod 时，会向 pod 注入两个环境变量：
 1. VMIP
@@ -13,16 +16,37 @@
 
 其中，1 就是 VM 宿主机的 ip；2 就很关键了，它是一个 json，里面存储了 vm 和 pod 之间端口的映射关系，如：  
 ```json
-[{
-		"podPort": 7879,
-		"vmPort": 65322,
-		"desc": "rpc"
-	},
-	{
-		"podPort": 8080,
-		"vmPort": 56798,
-		"desc": "http"
-	}
+[
+    {
+        "originport": "8003",
+        "portname": "public",
+        "ports": [
+            {
+                "HostIP": "",
+                "HostPort": "56164"
+            }
+        ]
+    },
+    {
+        "originport": "8005",
+        "portname": "management",
+        "ports": [
+            {
+                "HostIP": "",
+                "HostPort": "57897"
+            }
+        ]
+    },
+    {
+        "originport": "6900",
+        "portname": "rpc",
+        "ports": [
+            {
+                "HostIP": "",
+                "HostPort": "53727"
+            }
+        ]
+    }
 ]
 ```
 podPort 每个 pod 都是相同的，而 vmPort 就是随机分配了的（因为一个 vm 要启动多个 pod，如果不随机分配而固定的话就会产生端口冲突）所以要解决这个问题，首先要将 dubbo 和 http 服务绑定到指定的 podPort，接下来，重点来了，上报注册中心时也要用 `vmip` 和 `vmport 中分配的那个端口`。  
@@ -30,3 +54,29 @@ podPort 每个 pod 都是相同的，而 vmPort 就是随机分配了的（因�
 那具体怎么做呢？  
 
 搜索大量资料后发现，dubbo 和 nacos 都可以通过启动参数指定要上报到注册中心的端口和 ip；所以最后在启动脚本中，通过一些 awk 命令解析出 http 和 rpc 对应的端口解决了这个问题。
+
+```sh
+#/bin/bash
+dubboPort=$(echo $VMPORT | awk -F ',{"' -v OFS='\n' '{var=$1;$1=var;print $0}' | awk -F '"' '/rpc/{print $(NF-1)}')
+nacosPort=$(echo $VMPORT | awk -F ',{"' -v OFS='\n' '{var=$1;$1=var;print $0}' | awk -F '"' '/public/{print $(NF-1)}')
+
+Push_Home=$( cd ../;pwd)
+
+jarName=$(ls $Push_Home/libs | grep jar | awk 'NR==1')
+
+
+javaOpt="-Xms${jvm_memory:-1024}m -Xmx${jvm_memory:-1024}m -Dfile.encoding=UTF-8 \
+            -Dserver.port=8003 -DDUBBO_PORT_TO_BIND=6900 \
+            -Denv.nacos.server.ip=${nacos_ip:-"test.nacos.com"}"
+
+if test -n "$VMIP"; then
+    javaOpt="$javaOpt -Dspring.cloud.nacos.discovery.ip=${VMIP} -Dspring.cloud.nacos.discovery.port=${nacosPort} \
+    -DDUBBO_IP_TO_REGISTRY=${VMIP} -DDUBBO_PORT_TO_REGISTRY=${dubboPort}"
+fi
+
+echo about to start $Push_Home/libs/${jarName}, use opt: $javaOpt
+
+java $javaOpt -jar $Push_Home/libs/$jarName
+
+echo start over ~~~
+```
