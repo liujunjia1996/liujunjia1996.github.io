@@ -162,6 +162,9 @@ themeConfig: {
                                 text: '解决 git 命令慢',
                                 link: '/other/解决 git 命令慢.md',
                               }, {
+                                text: '调整 ssh 自动登出时间',
+                                link: '/other/调整 ssh 自动登出时间.md',
+                              }, {
                                 text: '跨域',
                                 link: '/other/跨域.md',
                               }],
