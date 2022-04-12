@@ -23,7 +23,7 @@
 			}
     </script>
     <link rel="icon" href="/images/logo.png"><title>liujunjia's blog</title><meta name="description" content="">
-    <link rel="modulepreload" href="/assets/app.59a92310.js"><link rel="modulepreload" href="/assets/redis 分布式锁.html.fda01755.js"><link rel="modulepreload" href="/assets/redis 分布式锁.html.7bfa6f89.js">
+    <link rel="modulepreload" href="/assets/app.62810d89.js"><link rel="modulepreload" href="/assets/redis 分布式锁.html.e370f830.js"><link rel="modulepreload" href="/assets/redis 分布式锁.html.0386d54e.js">
     <link rel="stylesheet" href="/assets/style.b85d9a10.css">
   </head>
   <body>
@@ -41,6 +41,6 @@ end<span class="token punctuation">;</span>
 redis<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token char">&#39;expire&#39;</span><span class="token punctuation">,</span>KEYS<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token function">tonumber</span><span class="token punctuation">(</span>ARGV<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
 <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>添加 lua 脚本，使加锁和设置锁过期时间成为一个原子逻辑。</p><h3 id="锁过期导致的问题" tabindex="-1"><a class="header-anchor" href="#锁过期导致的问题" aria-hidden="true">#</a> 锁过期导致的问题</h3><p>如果线程 A 成功获取到了锁，并且设置了过期时间 30 秒，但线程 A 执行时间超过了 30 秒，锁过期自动释放，此时线程 B 获取到了锁；<br> 随后 A 执行完成，线程 A 使用 DEL 命令来释放锁，但此时线程 B 加的锁还没有执行完成，线程 A 实际释放的线程 B 加的锁。<br> 这样就会导致分布式锁，锁不住的问题。<br> 可以通过设置守护线程自动续期解决或者直接设置足够大的过期时间解决。</p><!--]--></div><footer class="page-meta"><!----><div class="meta-item last-updated"><span class="meta-item-label">Last Updated: </span><!----></div><div class="meta-item contributors"><span class="meta-item-label">Contributors: </span><span class="meta-item-info"><!--[--><!--[--><span class="contributor" title="email: 43411944+liujunjia1996@users.noreply.github.com">liujunjia</span><!----><!--]--><!--]--></span></div></footer><!----><!--[--><!--[--><!----><!--]--><!--]--></main><!--]--></div><!----><!--]--></div>
-    <script type="module" src="/assets/app.59a92310.js" defer></script>
+    <script type="module" src="/assets/app.62810d89.js" defer></script>
   </body>
 </html>
