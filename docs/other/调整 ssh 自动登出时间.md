@@ -1,4 +1,4 @@
-业务上用的 ssh 主机老是自动就退出了，在 ssh 工具开始自动发空包维持会话也不行。
+业务上用的 ssh 主机老是自动就退出了，在 ssh 工具开启自动发空包维持会话也不行。
 ```log
 # timed out waiting for input: auto-logout
 ```
