@@ -135,11 +135,14 @@ themeConfig: {
                                 text: 'git 基础',
                                 link: '/other/git 基础.md',
                               }, {
-                                text: 'java 数组声明',
-                                link: '/other/java 数组声明.md',
+                                text: 'java 数组声明转换',
+                                link: '/other/java 数组声明转换.md',
                               }, {
                                 text: 'oauth 2.0 ',
                                 link: '/other/oauth 2.0 .md',
+                              }, {
+                                text: 'rm -rf 排除指定文件',
+                                link: '/other/rm -rf 排除指定文件.md',
                               }, {
                                 text: 'vueAdmin',
                                 link: '/other/vueAdmin.md',
