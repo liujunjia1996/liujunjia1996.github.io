@@ -101,6 +101,9 @@ themeConfig: {
                                 text: 'core 为 0 的线程池',
                                 link: '/jdk/core 为 0 的线程池.md',
                               }, {
+                                text: 'record',
+                                link: '/jdk/record.md',
+                              }, {
                                 text: '值传递和引用传递',
                                 link: '/jdk/值传递和引用传递.md',
                               }, {
