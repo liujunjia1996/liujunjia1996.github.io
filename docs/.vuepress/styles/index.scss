@@ -1,6 +1,7 @@
 :root {
   --content-width: 900px;
   --c-brand: #2980b9;
+  --c-bg: #f5f5d5;
 }
 
 .page {
@@ -15,7 +16,6 @@
 
 body {
   overflow-y: scroll;
-  background-color: #f5f5d5;
   font-family: Georgia,serif;
   color: #111;
 }
