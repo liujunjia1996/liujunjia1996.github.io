@@ -11,6 +11,18 @@ themeConfig: {
 head: [['link', { rel: 'icon', href: '/images/logo.png' }]],
 bundler: '@vuepress/bundler-vite',
 theme: path.resolve(__dirname, './theme'),
+bundlerConfig: {
+  viteOptions: {
+    css: {
+      postcss: {
+          plugins: [
+            require('tailwindcss'),
+            require('autoprefixer')
+          ]
+      }
+    },
+  }
+},
 plugins: [
   [
     '@vuepress/plugin-search',

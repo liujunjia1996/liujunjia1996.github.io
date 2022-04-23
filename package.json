@@ -14,9 +14,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@vuepress/bundler-vite": "^2.0.0-beta.36",
-    "@vuepress/plugin-register-components": "^2.0.0-beta.36",
-    "@vuepress/plugin-search": "^2.0.0-beta.36",
+    "@vuepress/bundler-vite": "^2.0.0-beta.39",
+    "@vuepress/plugin-register-components": "^2.0.0-beta.39",
+    "@vuepress/plugin-search": "^2.0.0-beta.39",
     "autoprefixer": "^9.8.8",
     "md-padding": "^1.1.0",
     "postcss": "^7.0.39",

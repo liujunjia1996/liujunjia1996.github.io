@@ -80,7 +80,7 @@ export default {
     }
   },
   mounted() {
-    fetchWithLeetCodeToken('https://leetcode-api-new.herokuapp.com/progress/renlindong')
+    fetchWithLeetCodeToken('https://leetcode-api-new.herokuapp.com/progress/qaqljj')
       .then(res => {
         this.initData(res.userProfileUserQuestionProgress)
       })
@@ -90,7 +90,6 @@ export default {
 
 <style scoped>
 .card {
-  width: 400px;
   background-color: #fff;
   border-radius: 8px;
   padding-left: 13px;
@@ -116,16 +115,17 @@ export default {
 
 .progress-list {
   flex: 1;
-  margin-left: 20px;
+  margin:6px 0 0 24px;
 }
 
 .progress-item-header {
-  height: 32px;
+  height: 20px;
 }
 
 .progress-item-bar {
   height: 4px;
-  margin-top: 4px;
+  margin-top: 2px;
+  margin-bottom: 12px;
 }
 
 .progress-item-bar__inner {

@@ -3,22 +3,21 @@
     <div class="flex">
       <div class="text-base">
         过去一年一共提交了
-        <span class="font-bold text-2xl">{{ amount }}</span>
+        <span class="font-bold">{{ amount }}</span>
         次
       </div>
       <div class="flex ml-auto">
         <div>
-          累计提交：{{ totalActiveDays }}
+          累计提交：{{ totalActiveDays }} &nbsp;
         </div>
         <div>
           连续提交：{{ streak }}
         </div>
       </div>
     </div>
-    <div class="flex mt-4">
+    <div class="monthWrap mt-4">
       <Month
         v-for="(item, idx) in timeline"
-        class="mr-4"
         :key="idx"
         :showMonth="idx >= 1"
         :indent="item.indent"
@@ -63,7 +62,6 @@ export default {
       const now = dayjs();
       while (minus <= 12) {
         const month = now.subtract(minus, "month");
-        let days = month.daysInMonth();
         let startTime = month.startOf('month')
         let endTime = month.endOf('month')
         if (minus === 0) {
@@ -116,8 +114,8 @@ export default {
   mounted() {
     this.initMonths();
     Promise.all([
-      fetchWithLeetCodeToken("https://leetcode-api-new.herokuapp.com/recentSubmit/renlindong"),
-      fetchWithLeetCodeToken("https://leetcode-api-new.herokuapp.com/calendar/renlindong"),
+      fetchWithLeetCodeToken("https://leetcode-api-new.herokuapp.com/recentSubmit/qaqljj"),
+      fetchWithLeetCodeToken("https://leetcode-api-new.herokuapp.com/calendar/qaqljj"),
     ]).then(([recent, calendar]) => {
       this.initRecentData(recent);
       this.initCalendarData(calendar);
@@ -131,5 +129,8 @@ export default {
   background-color: #fff;
   padding: 16px 12px;
   border-radius: 10px;
+}
+.monthWrap {
+  margin-right: -8px;
 }
 </style>

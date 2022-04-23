@@ -198,6 +198,19 @@ themeConfig: {
 head: [['link', { rel: 'icon', href: '/images/logo.png' }]],
 bundler: '@vuepress/bundler-vite',
 theme: path.resolve(__dirname, './theme'),
+bundlerConfig: {
+  // vite 打包工具的选项
+  viteOptions: {
+    css: {
+      postcss: {
+          plugins: [
+            require('tailwindcss'),
+            require('autoprefixer')
+          ]
+      }
+    },
+  }
+},
 plugins: [
   [
     '@vuepress/plugin-search',

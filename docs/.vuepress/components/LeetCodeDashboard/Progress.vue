@@ -63,7 +63,7 @@ export default {
   border-radius: 50%;
   background-color: #fff;
   position: absolute;
-  z-index: 10;
+  z-index: 5;
   display: flex;
   flex-direction: column;
   align-items: center;
