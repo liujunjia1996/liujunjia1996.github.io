@@ -116,8 +116,8 @@ export default {
   mounted() {
     this.initMonths();
     Promise.all([
-      fetchWithLeetCodeToken("http://138.2.9.115:8080/recentSubmit/renlindong"),
-      fetchWithLeetCodeToken("http://138.2.9.115:8080/calendar/renlindong"),
+      fetchWithLeetCodeToken("https://leetcode-api-new.herokuapp.com/recentSubmit/renlindong"),
+      fetchWithLeetCodeToken("https://leetcode-api-new.herokuapp.com/calendar/renlindong"),
     ]).then(([recent, calendar]) => {
       this.initRecentData(recent);
       this.initCalendarData(calendar);
