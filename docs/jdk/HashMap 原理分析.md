@@ -124,7 +124,7 @@ hashcode 用来定位 node 在数组上的位置，equals 用来判断，当 has
 * JDK1.8 推荐使用 mappingCount 方法，因为这个方法的返回值是 long 类型，不会因为 size 方法是 int 类型限制最大值。
 
 ```java
-/**
+*
  * Copyright (c) 1997, 2018, Oracle and/or its affiliates. All rights reserved.
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
  *

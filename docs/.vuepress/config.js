@@ -199,7 +199,6 @@ head: [['link', { rel: 'icon', href: '/images/logo.png' }]],
 bundler: '@vuepress/bundler-vite',
 theme: path.resolve(__dirname, './theme'),
 bundlerConfig: {
-  // vite 打包工具的选项
   viteOptions: {
     css: {
       postcss: {

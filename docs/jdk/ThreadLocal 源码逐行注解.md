@@ -5,7 +5,7 @@
 下面是我自己注释的完整 ThreadLocal 的源码，来自 openJdk 11.
 
 ```java
-/**
+*
  * Copyright (c) 1997, 2013, Oracle and/or its affiliates. All rights reserved.
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
  *

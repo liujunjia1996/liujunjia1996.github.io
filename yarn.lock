@@ -227,7 +227,7 @@
   "resolved" "https://registry.npmjs.org/@vue/shared/-/shared-3.2.31.tgz"
   "version" "3.2.31"
 
-"@vuepress/bundler-vite@^2.0.0-beta.36", "@vuepress/bundler-vite@2.0.0-beta.39":
+"@vuepress/bundler-vite@^2.0.0-beta.38", "@vuepress/bundler-vite@2.0.0-beta.39":
   "integrity" "sha512-bJokX1QKpRSWV4iOZdpC7hEGbKZN4HbG8LtZFzQwaxEv6TM/vCU0e1eANapRPwjLC8nWfQqLU4rTBLJl0XiRMQ=="
   "resolved" "https://registry.npmjs.org/@vuepress/bundler-vite/-/bundler-vite-2.0.0-beta.39.tgz"
   "version" "2.0.0-beta.39"
@@ -389,7 +389,7 @@
     "@vuepress/core" "2.0.0-beta.38"
     "prismjs" "^1.27.0"
 
-"@vuepress/plugin-register-components@^2.0.0-beta.36":
+"@vuepress/plugin-register-components@^2.0.0-beta.38":
   "integrity" "sha512-B7aQ5srdxW/VPYkIee2Monbbzf8JS7XuBZqBoiYERb7J2o56toV3mJ11Y6gWX6pRp6fJMx2GT8EvU//TiWl43w=="
   "resolved" "https://registry.npmjs.org/@vuepress/plugin-register-components/-/plugin-register-components-2.0.0-beta.38.tgz"
   "version" "2.0.0-beta.38"
@@ -398,7 +398,7 @@
     "@vuepress/utils" "2.0.0-beta.38"
     "chokidar" "^3.5.3"
 
-"@vuepress/plugin-search@^2.0.0-beta.36":
+"@vuepress/plugin-search@^2.0.0-beta.38":
   "integrity" "sha512-bv5rDpXFjssYiP6wDdskObcKm9cEevKXVThx/F+0rwN0mVACqbEET0RvLeoU3uE5PYWJYB6lmh7xdn/74fPkWg=="
   "resolved" "https://registry.npmjs.org/@vuepress/plugin-search/-/plugin-search-2.0.0-beta.38.tgz"
   "version" "2.0.0-beta.38"
@@ -648,7 +648,12 @@
   "resolved" "https://registry.npmjs.org/acorn/-/acorn-7.4.1.tgz"
   "version" "7.4.1"
 
-"acorn@^8", "acorn@^8.4.1", "acorn@^8.5.0":
+"acorn@^8.5.0":
+  "integrity" "sha512-V/LGr1APy+PXIwKebEWrkZPwoeoF+w1jiOBUmuxuiUIaOHtob8Qc9BTrYo7VuI5fR8tqsy+buA2WFooR5olqvQ=="
+  "resolved" "https://registry.npmjs.org/acorn/-/acorn-8.7.0.tgz"
+  "version" "8.7.0"
+
+"acorn@^8", "acorn@^8.4.1":
   "integrity" "sha512-V/LGr1APy+PXIwKebEWrkZPwoeoF+w1jiOBUmuxuiUIaOHtob8Qc9BTrYo7VuI5fR8tqsy+buA2WFooR5olqvQ=="
   "resolved" "https://registry.npmjs.org/acorn/-/acorn-8.7.0.tgz"
   "version" "8.7.0"
@@ -1117,9 +1122,9 @@
   "resolved" "https://registry.npmjs.org/es-module-lexer/-/es-module-lexer-0.9.3.tgz"
   "version" "0.9.3"
 
-"esbuild-darwin-arm64@0.14.38":
-  "integrity" "sha512-eqF+OejMI3mC5Dlo9Kdq/Ilbki9sQBw3QlHW3wjLmsLh+quNfHmGMp3Ly1eWm981iGBMdbtSS9+LRvR2T8B3eQ=="
-  "resolved" "https://registry.npmjs.org/esbuild-darwin-arm64/-/esbuild-darwin-arm64-0.14.38.tgz"
+"esbuild-linux-64@0.14.38":
+  "integrity" "sha512-uuZHNmqcs+Bj1qiW9k/HZU3FtIHmYiuxZ/6Aa+/KHb/pFKr7R3aVqvxlAudYI9Fw3St0VCPfv7QBpUITSmBR1Q=="
+  "resolved" "https://registry.npmjs.org/esbuild-linux-64/-/esbuild-linux-64-0.14.38.tgz"
   "version" "0.14.38"
 
 "esbuild@^0.14.27", "esbuild@^0.14.29":
@@ -1281,11 +1286,6 @@
   "integrity" "sha1-FQStJSMVjKpA20onh8sBQRmU6k8="
   "resolved" "https://registry.npmjs.org/fs.realpath/-/fs.realpath-1.0.0.tgz"
   "version" "1.0.0"
-
-"fsevents@~2.3.2":
-  "integrity" "sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA=="
-  "resolved" "https://registry.npmjs.org/fsevents/-/fsevents-2.3.2.tgz"
-  "version" "2.3.2"
 
 "function-bind@^1.1.1":
   "integrity" "sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A=="
@@ -2477,7 +2477,7 @@
     "@vuepress/core" "2.0.0-beta.38"
     "@vuepress/theme-default" "2.0.0-beta.38"
 
-"vuepress@^2.0.0-beta.36":
+"vuepress@^2.0.0-beta.39":
   "integrity" "sha512-rAO0W+wlITVtUObo9vdZiLUZnlvCfIQ4wVst98yxjF9p5yeFYdCXCi1MLljag98Xl3W2u+rzUzfQGMhVR0jQnQ=="
   "resolved" "https://registry.npmjs.org/vuepress/-/vuepress-2.0.0-beta.39.tgz"
   "version" "2.0.0-beta.39"
