@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --content-width: 900px;
   --c-brand: #2980b9;
@@ -16,6 +20,13 @@
 
 body {
   overflow-y: scroll;
-  font-family: Georgia,serif;
   color: #111;
+}
+
+.text-24 {
+  font-size: 24px;
+}
+
+.font-bold {
+  font-weight: 500;
 }
