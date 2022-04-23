@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import { fetchWithLeetCodeToken } from "@/utils";
+import { fetchWithLeetCodeToken } from "../../utils";
 import dayjs from "dayjs";
 import Month from "./Month.vue";
 
