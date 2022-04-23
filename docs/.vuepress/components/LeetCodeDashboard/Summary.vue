@@ -37,7 +37,7 @@
 
 <script>
 import Progress from "./Progress.vue";
-import { fetchWithLeetCodeToken } from "../../utils"
+import { fetchWithLeetCodeToken } from "../utils"
 
 export default {
   components: {
