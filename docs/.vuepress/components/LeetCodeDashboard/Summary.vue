@@ -10,13 +10,13 @@
       </div>
       <div class="progress-list">
         <div class="progress-item" v-for="item in list" :key="item.type">
-          <div class="progress-item-header flex items-center">
-            <div class="text-sm">
-              {{ textMap[item.type] }}
-            </div>
-            <div class="ml-8 text-sm">
+          <div class="progress-item-header">
+            <span>
+              {{ textMap[item.type] }}&nbsp;
+            </span>
+            <span>
               {{ item.resolved }} / {{ item.amount }}
-            </div>
+            </span>
           </div>
           <div
             :class="['progress-item-bar', `progress-item-bar--${item.type}`]"
@@ -115,17 +115,20 @@ export default {
 
 .progress-list {
   flex: 1;
-  margin:6px 0 0 24px;
+  margin:-6px 0 0 24px;
 }
 
 .progress-item-header {
-  height: 20px;
+  height: 24px;
+  line-height: 24px;
+  color: #666;
+  font-size: 14px;
 }
 
 .progress-item-bar {
   height: 4px;
   margin-top: 2px;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
 .progress-item-bar__inner {

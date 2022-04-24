@@ -3,7 +3,7 @@
     <div class="day-container">
       <div v-for="i in amount" :key="i" :class="getClass(i)"></div>
     </div>
-    <div class="text-center mt-2">{{ showMonth ? month : "..." }}</div>
+    <div class="text-center">{{ showMonth ? month : "..." }}</div>
   </div>
 </template>
 
@@ -78,7 +78,7 @@ export default {
 <style scoped lang="scss">
 .month{
   display: inline-block;
-  margin-right: 8px;
+  margin-right: 12px;
   margin-bottom: 12px;
 }
 .day {

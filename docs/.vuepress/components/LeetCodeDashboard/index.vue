@@ -1,7 +1,7 @@
 <template>
   <div>
     <Summary />
-    <Calendar class="mt-6" />
+    <Calendar class="calendar"/>
   </div>
 </template>
 
@@ -26,5 +26,7 @@ export default {
 </script>
 
 <style scoped>
-
+.calendar {
+  margin-top: 16px;
+}
 </style>

@@ -1,21 +1,21 @@
 <template>
   <div class="calendar">
     <div class="flex">
-      <div class="text-base">
+      <span >
         过去一年一共提交了
-        <span class="font-bold">{{ amount }}</span>
+        <span >{{ amount }}</span>
         次
-      </div>
-      <div class="flex ml-auto">
-        <div>
+      </span>
+      <span class="flex ml-auto">
+        <span>
           累计提交：{{ totalActiveDays }} &nbsp;
-        </div>
-        <div>
+        </span>
+        <span>
           连续提交：{{ streak }}
-        </div>
-      </div>
+        </span>
+      </span>
     </div>
-    <div class="monthWrap mt-4">
+    <div class="monthWrap">
       <Month
         v-for="(item, idx) in timeline"
         :key="idx"
@@ -51,9 +51,9 @@ export default {
   computed: {
     amount() {
       return this.submitList.reduce((sum, curr) => {
-        return sum + curr.count
-      }, 0)
-    }
+        return sum + curr.count;
+      }, 0);
+    },
   },
   methods: {
     initMonths() {
@@ -62,17 +62,17 @@ export default {
       const now = dayjs();
       while (minus <= 12) {
         const month = now.subtract(minus, "month");
-        let startTime = month.startOf('month')
-        let endTime = month.endOf('month')
+        let startTime = month.startOf("month");
+        let endTime = month.endOf("month");
         if (minus === 0) {
-          endTime = month
+          endTime = month;
         }
         if (minus === 12) {
-          startTime = month
+          startTime = month;
         }
         months.unshift({
           startTime,
-          endTime
+          endTime,
         });
         minus++;
       }
@@ -80,7 +80,7 @@ export default {
       const result = [];
       reverseMonths.reduce((prev, curr) => {
         const { startTime, endTime } = curr;
-        const days = endTime.date() - startTime.date() + 1
+        const days = endTime.date() - startTime.date() + 1;
         const over = (days + prev) % 7;
         result.push({
           startTime: startTime.valueOf(),
@@ -101,7 +101,7 @@ export default {
       this.streak = streak;
       this.totalActiveDays = totalActiveDays;
       const parseSubmission = JSON.parse(submissionCalendar);
-      
+
       this.submitList = Object.keys(parseSubmission).map((time) => {
         return {
           time,
@@ -114,8 +114,12 @@ export default {
   mounted() {
     this.initMonths();
     Promise.all([
-      fetchWithLeetCodeToken("https://leetcode-api-new.herokuapp.com/recentSubmit/qaqljj"),
-      fetchWithLeetCodeToken("https://leetcode-api-new.herokuapp.com/calendar/qaqljj"),
+      fetchWithLeetCodeToken(
+        "https://leetcode-api-new.herokuapp.com/recentSubmit/qaqljj"
+      ),
+      fetchWithLeetCodeToken(
+        "https://leetcode-api-new.herokuapp.com/calendar/qaqljj"
+      ),
     ]).then(([recent, calendar]) => {
       this.initRecentData(recent);
       this.initCalendarData(calendar);
@@ -132,5 +136,10 @@ export default {
 }
 .monthWrap {
   margin-right: -8px;
+}
+.flex {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
 }
 </style>
