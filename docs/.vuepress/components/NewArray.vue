@@ -29,6 +29,7 @@ export default {
         `new ${isStr ? "String" : "int"}` +
         "[]".repeat(i) +
         v.replaceAll("[", "{").replaceAll("]", "}");
+        v.replaceAll("'", '"');
       this.renderAndCopy(v);
     },
     renderAndCopy(v) {
