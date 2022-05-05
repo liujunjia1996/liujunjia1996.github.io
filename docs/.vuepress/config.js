@@ -1,5 +1,4 @@
 const { path } = require('@vuepress/utils')
-const { viteBundler } = require('@vuepress/bundler-vite')
 module.exports = {
 lang: 'zh-CN',
 title: "liujunjia's blog",
@@ -197,10 +196,7 @@ themeConfig: {
                }] },
 },
 head: [['link', { rel: 'icon', href: '/images/logo.png' }]],
-bundler: viteBundler({
-  viteOptions: {},
-  vuePluginOptions: {},
-}),
+bundler: '@vuepress/bundler-vite',
 theme: path.resolve(__dirname, './theme'),
 plugins: [
   [
