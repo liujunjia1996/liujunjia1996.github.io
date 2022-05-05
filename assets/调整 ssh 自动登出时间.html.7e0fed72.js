@@ -1,0 +1,1 @@
+const t={key:"v-f91dc95e",path:"/other/%E8%B0%83%E6%95%B4%20ssh%20%E8%87%AA%E5%8A%A8%E7%99%BB%E5%87%BA%E6%97%B6%E9%97%B4.html",title:"",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[]};export{t as data};

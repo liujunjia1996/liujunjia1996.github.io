@@ -1,0 +1,1 @@
+const e={key:"v-02bb9bb0",path:"/alg/%E6%95%B4%E6%95%B0%E6%8B%86%E5%88%86.html",title:"",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[{level:2,title:"\u63CF\u8FF0",slug:"\u63CF\u8FF0",children:[]},{level:2,title:"\u5B9E\u73B0",slug:"\u5B9E\u73B0",children:[{level:3,title:"\u52A8\u6001\u89C4\u5212",slug:"\u52A8\u6001\u89C4\u5212",children:[]}]}]};export{e as data};
