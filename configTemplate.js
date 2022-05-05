@@ -1,6 +1,7 @@
 const getTemplate = (navbar,sidebar) => {
   const baseContent =
 `const { path } = require('@vuepress/utils')
+const { viteBundler } = require('@vuepress/bundler-vite')
 module.exports = {
 lang: 'zh-CN',
 title: "liujunjia's blog",
@@ -9,6 +10,10 @@ themeConfig: {
     sidebar: ${sidebar},
 },
 head: [['link', { rel: 'icon', href: '/images/logo.png' }]],
+bundler: viteBundler({
+  viteOptions: {},
+  vuePluginOptions: {},
+}),
 theme: path.resolve(__dirname, './theme'),
 plugins: [
   [
