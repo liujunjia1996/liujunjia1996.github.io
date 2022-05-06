@@ -162,6 +162,9 @@ themeConfig: {
                                 text: '接口幂等',
                                 link: '/other/接口幂等.md',
                               }, {
+                                text: '文本三剑客',
+                                link: '/other/文本三剑客.md',
+                              }, {
                                 text: '油猴自动登录',
                                 link: '/other/油猴自动登录.md',
                               }, {
