@@ -9,7 +9,7 @@
 
 record 其实是一个语法糖，简化了某一类对象的声明方式。比如下面是 jdk16 以前的声明：
 
-```
+```java
 public class Person {
     private final String name;
     private final String gender;
@@ -63,7 +63,7 @@ public class Person {
 
 在 jdk17 ，只需要一行
 
-```
+```java
 public record Person(String name, String gender, int age) {}
 ```
 
