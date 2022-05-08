@@ -113,6 +113,9 @@ themeConfig: {
                                 text: '如何处理 interruptExp',
                                 link: '/jdk/如何处理 interruptExp.md',
                               }, {
+                                text: '最简单的策略模式',
+                                link: '/jdk/最简单的策略模式.md',
+                              }, {
                                 text: '由类路径错误引发的配置失效分析',
                                 link: '/jdk/由类路径错误引发的配置失效分析.md',
                               }],
