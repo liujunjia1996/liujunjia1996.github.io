@@ -1,41 +1,33 @@
 const getTemplate = (navbar,sidebar) => {
   const baseContent =
-`const { path } = require('@vuepress/utils')
+`
+const { path } = require('@vuepress/utils')
 const { viteBundler } = require('@vuepress/bundler-vite')
+const { localTheme } = require('./theme')
+const { registerComponentsPlugin } = require('@vuepress/plugin-register-components')
+const { searchPlugin } = require('@vuepress/plugin-search')
+
 module.exports = {
 lang: 'zh-CN',
 title: "liujunjia's blog",
-themeConfig: {
-    navbar: ${navbar},
-    sidebar: ${sidebar},
-},
+theme: localTheme({
+  navbar: ${navbar},
+  sidebar: ${sidebar},
+  darkMode: false
+}),
 head: [['link', { rel: 'icon', href: '/images/logo.png' }]],
 bundler: viteBundler({
   viteOptions: {},
   vuePluginOptions: {},
 }),
-theme: path.resolve(__dirname, './theme'),
 plugins: [
-  [
-    '@vuepress/plugin-search',
-    {
-      locales: {
-        '/': {
-          placeholder: 'Search',
-        },
-        '/zh/': {
-          placeholder: '搜索',
-        },
-      },
-    },
-  ],
-  [
-    '@vuepress/plugin-register-components',
-    {
-      componentsDir: path.resolve(__dirname, './components')
-    }
-  ]
-],
+  registerComponentsPlugin({
+    componentsDir: path.resolve(__dirname, './components')
+  }),
+  searchPlugin({
+    // options
+  }),
+]
 }`
   return baseContent
 }

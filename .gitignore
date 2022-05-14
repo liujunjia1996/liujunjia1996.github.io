@@ -4,3 +4,4 @@ node_modules
 dist
 package-lock.json
 config.js
+docs/.vuepress/config.js
