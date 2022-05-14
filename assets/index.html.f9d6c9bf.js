@@ -1,0 +1,1 @@
+const e={key:"v-8daa1a0e",path:"/",title:"",lang:"zh-CN",frontmatter:{home:!0,heroText:"\u7F16\u7A0B \u8BFB\u4E66 \u82F1\u8BED",tagline:"\u6BCF\u5929\u53EA\u7528\u8FDB\u6B65\u4E00\u70B9\u70B9 step by step"},excerpt:"",headers:[]};export{e as data};
