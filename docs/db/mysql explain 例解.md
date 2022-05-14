@@ -8,7 +8,7 @@ show variables like "%version%"`
 explain 结果的第一列 id 用来标识整个 SQL 的执行顺序。id 如果相同，从上往下依次执行；id 不同，id 值越大，执行优先级越高，越先被执行；如果行引用其他行的并集结果，则该值可以为 NULL，如例 1 的用于去重的临时表的 id 就是 null。
 
 ## 例 1
-```
+```sql
 EXPLAIN
 SELECT * FROM tbl_user AS tb1 WHERE user_name = '薛沉香'
 UNION
@@ -23,7 +23,7 @@ SELECT * FROM tbl_user AS tb2 WHERE user_name = '慕容兰娟';
 ![image](https://user-images.githubusercontent.com/43411944/140271189-fd8230c7-1a9e-4eb5-bc07-fdcf48337ca6.png)
 
 ## 例 2
-```
+```sql
 CREATE TABLE `student` (
   `studentid` int(11) NOT NULL,
   `studentname` varchar(45) NOT NULL,
