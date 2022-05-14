@@ -1,0 +1,1 @@
+import{_ as a,r as o,o as c,c as r,a as e,F as _}from"./app.25f8d8e7.js";const s={};function d(i,l){const t=o("LifeCount"),n=o("LeetCodeDashboard-index");return c(),r(_,null,[e(t,{title:"\u4ECA\u5E74\u8FDB\u5EA6",count:365}),e(t,{title:"\u4EBA\u751F\u8FDB\u5EA6",count:80}),e(n)],64)}var f=a(s,[["render",d],["__file","index.html.vue"]]);export{f as default};
