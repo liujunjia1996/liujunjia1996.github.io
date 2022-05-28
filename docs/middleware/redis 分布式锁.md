@@ -23,6 +23,7 @@ redis.call('expire',KEYS[1],tonumber(ARGV[2]));
 return 1;
 ```
 添加 lua 脚本，使加锁和设置锁过期时间成为一个原子逻辑。   
+ps：用 redisTemplate 的 putIfAbsent 同时传入 key value 和 过期时间也可以实现
 ### 锁过期导致的问题
 如果线程 A 成功获取到了锁，并且设置了过期时间 30 秒，但线程 A 执行时间超过了 30 秒，锁过期自动释放，此时线程 B 获取到了锁；  
 随后 A 执行完成，线程 A 使用 DEL 命令来释放锁，但此时线程 B 加的锁还没有执行完成，线程 A 实际释放的线程 B 加的锁。  
