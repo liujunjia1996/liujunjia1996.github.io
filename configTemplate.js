@@ -13,7 +13,8 @@ title: "liujunjia's blog",
 theme: localTheme({
   navbar: ${navbar},
   sidebar: ${sidebar},
-  darkMode: false
+  colorMode: light,
+  colorModeSwitch: false
 }),
 head: [['link', { rel: 'icon', href: '/images/logo.png' }]],
 bundler: viteBundler({
