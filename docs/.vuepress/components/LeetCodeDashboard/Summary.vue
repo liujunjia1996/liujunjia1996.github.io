@@ -80,7 +80,7 @@ export default {
     }
   },
   mounted() {
-    fetchWithLeetCodeToken('https://leetcode-api-new.herokuapp.com/progress/qaqljj')
+    fetchWithLeetCodeToken('https://www.333589.xyz/progress/qaqljj')
       .then(res => {
         this.initData(res.userProfileUserQuestionProgress)
       })
