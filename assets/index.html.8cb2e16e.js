@@ -1,0 +1,1 @@
+import{_ as c,r as t,o as a,c as r,a as e}from"./app.f50d196c.js";const _={};function s(d,i){const o=t("LifeCount"),n=t("LeetCodeDashboard-index");return a(),r("div",null,[e(o,{title:"\u4ECA\u5E74\u8FDB\u5EA6",count:365}),e(o,{title:"\u4EBA\u751F\u8FDB\u5EA6",count:80}),e(n)])}var f=c(_,[["render",s],["__file","index.html.vue"]]);export{f as default};
