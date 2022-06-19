@@ -80,7 +80,7 @@ export default {
     }
   },
   mounted() {
-    fetchWithLeetCodeToken('https://www.333589.xyz/progress/qaqljj')
+    fetchWithLeetCodeToken('http://138.2.14.147:8833/progress/qaqljj')
       .then(res => {
         this.initData(res.userProfileUserQuestionProgress)
       })

@@ -115,10 +115,10 @@ export default {
     this.initMonths();
     Promise.all([
       fetchWithLeetCodeToken(
-        "https://leetcode-api-new.herokuapp.com/recentSubmit/qaqljj"
+        "http://138.2.14.147:8833/recentSubmit/qaqljj"
       ),
       fetchWithLeetCodeToken(
-        "https://leetcode-api-new.herokuapp.com/calendar/qaqljj"
+        "http://138.2.14.147:8833/calendar/qaqljj"
       ),
     ]).then(([recent, calendar]) => {
       this.initRecentData(recent);

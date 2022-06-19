@@ -2,7 +2,7 @@
 home: true
 # heroImage: /img/web.png
 heroText:  编程 读书 英语
-tagline:   每天只用进步一点点 step by step
+tagline:   随便看看这个世界
 # footer: liujunjia1996 / xi'an
 
 ---
