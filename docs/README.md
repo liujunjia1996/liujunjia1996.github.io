@@ -8,6 +8,5 @@ tagline:   随便看看这个世界
 ---
 <LifeCount title="今年进度" :count="365"/>
 <LifeCount title="人生进度" :count="80"/>
-<LeetCodeDashboard-index />
 
-<iframe id="iframe" width=100% frameborder=0 src="https://leetcode.cn/u/qaqljj/"> </iframe>
+<iframe id="iframe" width=100% height=600px frameborder=0 src="https://leetcode.cn/u/qaqljj/"> </iframe>
