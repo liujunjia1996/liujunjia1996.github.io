@@ -58,7 +58,7 @@ podPort 每个 pod 都是相同的，而 vmPort 就是随机分配了的（因�
 搜索大量资料后发现，dubbo 和 nacos 都可以通过启动参数指定要上报到注册中心的端口和 ip；所以最后在启动脚本中，通过一些 awk 命令解析出 http 和 rpc 对应的端口解决了这个问题。
 
 ```sh
-#/bin/bash
+bin/bash
 dubboPort=$(echo $VMPORT | awk -F ',{"' -v OFS='\n' '{var=$1;$1=var;print $0}' | awk -F '"' '/rpc/{print $(NF-1)}')
 nacosPort=$(echo $VMPORT | awk -F ',{"' -v OFS='\n' '{var=$1;$1=var;print $0}' | awk -F '"' '/public/{print $(NF-1)}')
 
