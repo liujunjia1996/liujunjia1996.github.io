@@ -1,0 +1,10 @@
+import{_ as s,o as a,c as n,d as e}from"./app.f6bfe801.js";const l={},t=e(`<p>删除文件时，想保留某个特定文件:</p><div class="language-bash line-numbers-mode" data-ext="sh"><pre class="language-bash"><code><span class="token function">ls</span>
+a  autoCurl.sh  b  c
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>如果要删除 a、 b、c 这三个文件，但是保留 autoCurl，那么就可以用下面两个命令之一解决：</p><p>方法 1：</p><div class="language-bash line-numbers-mode" data-ext="sh"><pre class="language-bash"><code><span class="token function">rm</span> <span class="token parameter variable">-f</span> <span class="token variable"><span class="token variable">\`</span><span class="token function">ls</span> <span class="token operator">|</span> <span class="token function">grep</span> <span class="token parameter variable">-v</span> auto<span class="token variable">\`</span></span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>方法 2：</p><div class="language-bash line-numbers-mode" data-ext="sh"><pre class="language-bash"><code><span class="token comment"># 查看是否打开 模式扩展</span>
+<span class="token builtin class-name">shopt</span> extglob
+<span class="token comment"># 如果是 off，则需执行下面命令打开</span>
+<span class="token builtin class-name">shopt</span> <span class="token parameter variable">-s</span> extglob
+<span class="token comment"># 名称要写全</span>
+<span class="token function">rm</span> <span class="token parameter variable">-f</span> <span class="token operator">!</span><span class="token punctuation">(</span>autoCurl.sh<span class="token punctuation">)</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>`,7),i=[t];function c(p,o){return a(),n("div",null,i)}const d=s(l,[["render",c],["__file","rm -rf 排除指定文件.html.vue"]]);export{d as default};

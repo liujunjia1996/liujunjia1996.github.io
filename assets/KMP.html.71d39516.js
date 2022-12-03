@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-441e26f7","path":"/alg/KMP.html","title":"","lang":"zh-CN","frontmatter":{},"excerpt":"","headers":[],"git":{"updatedTime":1670058257000,"contributors":[{"name":"mark","email":"43411944+liujunjia1996@users.noreply.github.com","commits":1}]},"filePathRelative":"alg/KMP.md"}');export{e as data};
