@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-5851e632","path":"/other/%E6%96%87%E6%9C%AC%E4%B8%89%E5%89%91%E5%AE%A2.html","title":"grep","lang":"zh-CN","frontmatter":{},"excerpt":"","headers":[],"git":{"updatedTime":1672558198000,"contributors":[{"name":"mark","email":"43411944+liujunjia1996@users.noreply.github.com","commits":1}]},"filePathRelative":"other/文本三剑客.md"}');export{e as data};
