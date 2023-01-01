@@ -29,6 +29,7 @@ export default {
     } else {
       this.cur = new Date().getFullYear() - 1996;
     }
+    // markdown 的 vue 组件是提前生成好的静态代码？ 
     console.log(this.cur);
   },
   methods: {
