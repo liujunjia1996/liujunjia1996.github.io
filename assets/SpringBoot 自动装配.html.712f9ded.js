@@ -1,1 +1,0 @@
-import{_ as e,o,c as t,b as _}from"./app.3c20c4d1.js";const c={},n=_("p",null,"todo",-1),s=[n];function r(a,l){return o(),t("div",null,s)}const d=e(c,[["render",r],["__file","SpringBoot 自动装配.html.vue"]]);export{d as default};
