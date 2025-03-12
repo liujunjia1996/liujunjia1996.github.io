@@ -1,3 +1,6 @@
+![image](https://github.com/user-attachments/assets/64380423-f40a-48fb-bb53-d13da2a18de3)
+
+
 这个是公司当前 oauth2 的鉴权交互，sp 指业务后端  
 ![image](https://user-images.githubusercontent.com/43411944/136917698-36d8be57-b495-49d2-a9ce-5a4274181655.png)
 
